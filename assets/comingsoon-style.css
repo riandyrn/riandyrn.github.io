@@ -1,0 +1,57 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:700);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+body
+{
+	padding-top: 60px;
+	text-align: center;
+	color: #333;
+	background: whitesmoke;
+}
+
+h1
+{
+	font-family: 'Lato', sans-serif;
+	text-transform: uppercase;
+}
+
+h3, p
+{
+	font-family: 'Open Sans', sans-serif;
+}
+
+h3
+{
+	margin-bottom: 0;
+}
+
+p
+{
+	margin-top: 10px;
+}
+
+img#neko
+{
+	margin: 10px 0;
+}
+
+.font-30
+{
+	font-size: 25px;
+}
+
+.font-18
+{
+	font-size: 18px;
+}
+
+.font-60
+{
+	font-size: 60px;
+}
+
+.font-72
+{
+	font-size: 72px;
+}
+
