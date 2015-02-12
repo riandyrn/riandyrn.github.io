@@ -94,11 +94,16 @@
 	  </div>
 	
 	  <div id="footer">
-		<p>Copyright &copy; 2014 Telkom Innovation & Design Center</p>
+		<p>Copyright &copy; <span id="current_year"></span> Telkom Innovation & Design Center</p>
 	  </div>
     <!-- js placed at the end of the document so the pages load faster -->
     <script src="assets/js/jquery.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('#current_year').html(new Date().getFullYear());
+		});
+	</script>
 
     <!--BACKSTRETCH-->
     <!-- You can use an image of whatever size. This script will stretch to fit in any screen size.-->
