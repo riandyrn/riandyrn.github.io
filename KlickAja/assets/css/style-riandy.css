@@ -1,0 +1,201 @@
+.btn, .form-control, .input-group > .input-group-addon, .input-group > .form-control, .modal-content
+{
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+}
+
+body.login
+{
+	background: #EE2E24;
+}
+
+body.main
+{
+	background: #F9F9F9;
+	font-family: 'Lato';
+}
+
+header
+{
+	background: #E60000;
+	height: 73px;
+}
+
+#logo_app, #logo_telkom
+{
+	width: 105px;
+}
+
+#logo_app
+{
+  margin: 15px 15px;
+}
+
+#logo_telkom
+{
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+nav
+{
+	background: #EE2E24;
+	color: #fff;
+}
+
+nav > p
+{
+	padding: 6px;
+	opacity: 0.95;
+	margin-bottom: 0px;
+	cursor: default;
+}
+
+ul#main_menu, ul#tab_menu
+{
+	list-style-type: none;
+	padding: 0;
+	
+	margin-bottom: 0;
+}
+
+ul#tab_menu
+{
+	text-align: center;
+}
+
+ul#main_menu > li
+{
+	padding: 10px 15px;
+	border-bottom: 1px solid #E6E2DF;
+}
+
+ul#main_menu > li:hover
+{
+	background: #EEEEEE;
+	cursor: pointer;
+}
+
+ul#main_menu > li > span
+{
+	font-size: 1.6em;
+	color: #ee2e24;
+	margin-left: 10px;
+}
+
+.container-full-width
+{
+	padding: 0;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#btn_settings, #btn_home
+{
+	position: relative;
+	color: whitesmoke;
+	opacity: 0.99;
+	top: -23px;
+}
+
+#btn_settings
+{
+	right: 5px;
+}
+
+#btn_home
+{
+	left: 5px;
+}
+
+ul#tab_menu > li:last-child
+{
+	border-right: none;
+}
+
+footer#tab
+{
+	position: fixed;
+	bottom: 5px;
+	left: 0;
+	right: 0;
+}
+
+ul#tab_menu
+{
+	padding: 0px 0;
+}
+
+ul#tab_menu > li
+{
+	display: inline;
+	padding: 10px 30px;
+	border-right: thin solid #d72b22;
+	background: #EE2E24;
+}
+
+ul#tab_menu > li > img 
+{
+  width: 23px;
+}
+
+ul#tab_menu > li:hover
+{
+	background: #F0453C;
+	cursor: pointer;
+}
+
+#footer_wrapper
+{
+	background: #EE2E24;
+	height: 37px;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.section-title
+{
+	font-weight: 400;
+	color: #FE5555;
+	font-size: 2em;
+	margin-bottom: 25px;
+}
+
+.near-inputs
+{
+	margin-top: -11px;
+}
+
+.container-content
+{
+	padding: 0 30px;
+	overflow: auto;
+	height: 480px;
+}
+
+.no-padding
+{
+	padding: 0;
+}
+
+.checkbox-right
+{
+	right: 0;
+	width: 15px;
+	height: 15px;
+}
+
+.service-item
+{
+	margin-bottom: 20px;
+}
