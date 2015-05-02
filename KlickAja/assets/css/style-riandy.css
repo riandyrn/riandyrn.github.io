@@ -199,3 +199,11 @@ ul#tab_menu > li:hover
 {
 	margin-bottom: 20px;
 }
+
+@media	(min-height: 640px)
+{
+	.container-content
+	{
+		height: 640px;
+	}
+}
