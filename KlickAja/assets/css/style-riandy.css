@@ -200,7 +200,7 @@ ul#tab_menu > li:hover
 	margin-bottom: 20px;
 }
 
-@media	(min-height: 640px)
+@media	(min-height: 650px)
 {
 	.container-content
 	{
