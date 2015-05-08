@@ -1,0 +1,838 @@
+/* InstantAtlas Flex StyleSheet */
+/* InstantAtlas(tm) Designer | Styles */
+/* InstantAtlas!22 Core, v.6.7.2 CSS export */
+Application {
+	themeColor: #f69305; 
+	backgroundAlpha: 1; 
+	backgroundGradientColors: #ffffff,#ffffff; 
+	/**             Background and theme colour ie. button, checkbox etc. highlight colour.             */ 
+}
+.backgroundRect {
+	borderColor: #73c1e6; 
+	cornerRadius: 5; 
+	backgroundColor: #eff8fd; 
+	backgroundAlpha: 1; 
+	dropShadowEnabled: false; 
+	dropShadowColor: #2e7799; 
+	borderThickness: 2; 
+	shadowDistance: 2; 
+	shadowDirection: center; 
+	/**             The background rectangle.             */ 
+}
+.backgroundRectPrint {
+	borderColor: #ffffff; 
+	cornerRadius: 5; 
+	backgroundColor: #ffffff; 
+	backgroundAlpha: 0; 
+	borderThickness: 2; 
+	/**             The background rectangle during printing.             */ 
+}
+Panel {
+	borderColor: #73c1e6; 
+	cornerRadius: 5; 
+	backgroundColor: #ffffff; 
+	backgroundAlpha: 1; 
+	dropShadowEnabled: false; 
+	dropShadowColor: #2e7799; 
+	headerHeight: 16; 
+	borderThickness: 2; 
+	shadowDistance: 2; 
+	shadowDirection: center; 
+	headerColors: #cdeeff,#cdeeff; 
+	/**             Panels which contain the various components including tables, maps and charts.             */ 
+}
+.legendPanel {
+	backgroundAlpha: 1; 
+	/**             The legend panel. Add properties to override the 'Panel styling'             */ 
+}
+.mapPanel {
+	backgroundAlpha: 1; 
+	/**             The map panel. Add properties to override the 'Panel styling'             */ 
+}
+.barChartPanel {
+	backgroundAlpha: 1; 
+	/**             The bar chart panel. Add properties to override the 'Panel styling'             */ 
+}
+.flippedBarChartPanel {
+	backgroundAlpha: 1; 
+	/**             The vertical bar chart panel. Add properties to override the 'Panel styling'             */ 
+}
+.boxAndWhiskerPanel {
+	backgroundAlpha: 1; 
+	/**             The Box and whisker chart panel. Add properties to override the 'Panel styling'             */ 
+}
+.timeSeriesPanel {
+	backgroundAlpha: 1; 
+	/**             The time series panel. Add properties to override the 'Panel styling'             */ 
+}
+.discreteTimeSeriesPanel {
+	backgroundAlpha: 1; 
+	/**             The discrete time series panel. Add properties to override the 'Panel styling'             */ 
+}
+.flippedTimeSeriesPanel {
+	backgroundAlpha: 1; 
+	/**             The vertical time series panel. Add properties to override the 'Panel styling'             */ 
+}
+.pieChartPanel {
+	backgroundAlpha: 1; 
+	/**             The pie chart panel. Add properties to override the 'Panel styling'             */ 
+}
+.tablePanel {
+	backgroundAlpha: 1; 
+	/**             The table panel. Add properties to override the 'Panel styling'             */ 
+}
+.geogExplorerPanel {
+	backgroundAlpha: 1; 
+	dropShadowEnabled: true; 
+	/**             The geography explorer. Add properties to override the 'Panel styling'             */ 
+}
+.dataExplorerPanel {
+	backgroundAlpha: 1; 
+	dropShadowEnabled: true; 
+	/**             The data explorer. Add properties to override the 'Panel styling'             */ 
+}
+.filterExplorerPanel {
+	backgroundAlpha: 1; 
+	dropShadowEnabled: true; 
+	/**             The filter explorer. Add properties to override the 'Panel styling'             */ 
+}
+.metadataPanel {
+	backgroundAlpha: 1; 
+	/**             The metadata panel. Add properties to override the 'Panel styling'             */ 
+}
+.statsPanel {
+	backgroundAlpha: 1; 
+	/**             The stats panel. Add properties to override the 'Panel styling'             */ 
+}
+.timeAnimationPanel {
+	backgroundAlpha: 1; 
+	/**             The time animation panel. Add properties to override the 'Panel styling'             */ 
+}
+.pyramidPanel {
+	backgroundAlpha: 1; 
+	/**             The pyramid chart panel. Add properties to override the 'Panel styling'             */ 
+}
+.dotPlotPanel {
+	backgroundAlpha: 1; 
+	/**             The dot plot panel. Add properties to override the 'Panel styling'             */ 
+}
+.searchPanel {
+	backgroundAlpha: 1; 
+	/**             The search panel. Add properties to override the 'Panel styling'             */ 
+}
+.legendPanel2 {
+	backgroundAlpha: 1; 
+	/**             The legend panel. Add properties to override the 'Panel styling'             */ 
+}
+.mapPanel2 {
+	backgroundAlpha: 1; 
+	/**             The map panel. Add properties to override the 'Panel styling'             */ 
+}
+.barChartPanel2 {
+	backgroundAlpha: 1; 
+	/**             The bar chart panel. Add properties to override the 'Panel styling'             */ 
+}
+.timeSeriesPanel2 {
+	backgroundAlpha: 1; 
+	/**             The time series panel. Add properties to override the 'Panel styling'             */ 
+}
+.pieChartPanel2 {
+	backgroundAlpha: 1; 
+	/**             The pie chart panel. Add properties to override the 'Panel styling'             */ 
+}
+.tablePanel2 {
+	backgroundAlpha: 1; 
+	/**             The table panel. Add properties to override the 'Panel styling'             */ 
+}
+.dataExplorerPanel2 {
+	backgroundAlpha: 1; 
+	/**             The data explorer. Add properties to override the 'Panel styling'             */ 
+}
+.filterExplorerPanel2 {
+	backgroundAlpha: 1; 
+	/**             The filter explorer. Add properties to override the 'Panel styling'             */ 
+}
+.metadataPanel2 {
+	backgroundAlpha: 1; 
+	/**             The metadata panel. Add properties to override the 'Panel styling'             */ 
+}
+.popUpWindow {
+	borderColor: #73c1e6; 
+	fontWeight: bold; 
+	cornerRadius: 5; 
+	backgroundColor: #ffffff; 
+	backgroundAlpha: 1; 
+	dropShadowEnabled: true; 
+	dropShadowColor: #2e7799; 
+	color: #2e7799; 
+	borderThickness: 2; 
+	shadowDistance: 2; 
+	shadowDirection: center; 
+	fontStyle: normal; 
+	headerColors: #cdeeff,#cdeeff; 
+	fontFamily: Verdana; 
+	footerColors: #cdeeff,#cdeeff; 
+	fontSize: 10; 
+	/**             Popup windows including the legend editor, data explorer, filter explorer, print window, about window.             */ 
+}
+.windowTitleText {
+	fontWeight: bold; 
+	textAlign: center; 
+	color: #2e7799; 
+	letterSpacing: 0; 
+	fontStyle: normal; 
+	fontFamily: Verdana; 
+	fontSize: 11; 
+	textDecoration: none; 
+	/**             The title bar text for panels and popup windows.             */ 
+}
+ScrollBar {
+	trackColors: #eff8fd,#eff8fd; 
+	fillColors: #73c1e6,#73c1e6; 
+	/**             All Scrollbars             */ 
+}
+.map {
+	featureSelectionColor: #f69305; 
+	featureRollOverColor: #44ffff; 
+	useFeatureSelectionColor: true; 
+	/**             Map selection and highlighting colours. If 'useFeatureSelectionColor' is set to false selected areas are not coloured, but unselected areas are faded.             */ 
+}
+.mapText {
+	fontWeight: normal; 
+	color: #2e7799; 
+	letterSpacing: 0; 
+	fontStyle: normal; 
+	fontFamily: Verdana; 
+	fontSize: 9; 
+	textDecoration: none; 
+	/**             Map copyright text.             */ 
+}
+.mapControl {
+	borderColor: #73c1e6; 
+	cornerRadius: 6; 
+	borderAlpha: 0; 
+	backgroundColor: #eff8fd; 
+	backgroundAlpha: 1; 
+	borderThickness: 0; 
+	/**             Map zoom control.             */ 
+}
+MapTip {
+	fontWeight: bold; 
+	backgroundColor: #eff8fd; 
+	color: #2e7799; 
+	fontStyle: normal; 
+	fontFamily: Verdana; 
+	fontSize: 10; 
+	/**             Map tips.             */ 
+}
+.toolMenu {
+	fontWeight: normal; 
+	borderColor: #73c1e6; 
+	color: #2e7799; 
+	fontStyle: normal; 
+	fontFamily: Verdana; 
+	fontSize: 10; 
+	/**             The tool menu             */ 
+}
+.baseLayer {
+	borderColor: #cccccc; 
+	fillColor: #f9f9f9; 
+	fillAlpha: 0.9; 
+	noDataFill: #eeeeee; 
+	/**             Default settings for the base layer. 'fillColor' is applied when an area in the legend is outside of the legend classification.             */ 
+}
+.layerLabels {
+	fontWeight: normal; 
+	color: #2e7799; 
+	letterSpacing: 0; 
+	fontStyle: normal; 
+	fontFamily: Verdana; 
+	fontSize: 9; 
+	textDecoration: none; 
+	/**             Layer labels.             */ 
+}
+.contextualLayer1 {
+	borderColor: #ff0000; 
+	fillColor: #ffffff; 
+	borderAlpha: 1; 
+	fillAlpha: 0; 
+	borderThickness: 1; 
+	symbolSize: 8; 
+	/**             First contextual layer shown in the map, fillAlpha, borderAlpha and borderThickness affect the legend only.             */ 
+}
+.contextualLayer2 {
+	borderColor: #008000; 
+	fillColor: #ffffff; 
+	borderAlpha: 1; 
+	fillAlpha: 0; 
+	borderThickness: 1; 
+	symbolSize: 8; 
+	/**             Second contextual layer shown in the map, fillAlpha, borderAlpha and borderThickness affect the legend only.             */ 
+}
+.contextualLayer3 {
+	borderColor: #0000ff; 
+	fillColor: #ffffff; 
+	borderAlpha: 1; 
+	fillAlpha: 0; 
+	borderThickness: 1; 
+	symbolSize: 8; 
+	/**             Third contextual layer shown in the map, fillAlpha, borderAlpha and borderThickness affect the legend only.             */ 
+}
+.contextualLayer4 {
+	borderColor: #44ffff; 
+	fillColor: #ffffff; 
+	borderAlpha: 1; 
+	fillAlpha: 0; 
+	borderThickness: 1; 
+	symbolSize: 8; 
+	/**             Fourth contextual layer shown in the map, fillAlpha, borderAlpha and borderThickness affect the legend only.             */ 
+}
+.contextualLayer5 {
+	borderColor: #6495ed; 
+	fillColor: #ffffff; 
+	borderAlpha: 1; 
+	fillAlpha: 0; 
+	borderThickness: 1; 
+	symbolSize: 8; 
+	/**             Fifth contextual layer shown in the map, fillAlpha, borderAlpha and borderThickness affect the legend only.             */ 
+}
+.contextualLayer6 {
+	borderColor: #daa520; 
+	fillColor: #ffffff; 
+	borderAlpha: 1; 
+	fillAlpha: 0; 
+	borderThickness: 1; 
+	symbolSize: 8; 
+	/**             Sixth contextual layer shown in the map, fillAlpha, borderAlpha and borderThickness affect the legend only.             */ 
+}
+.contextualLayer7 {
+	borderColor: #008080; 
+	fillColor: #ffffff; 
+	borderAlpha: 1; 
+	fillAlpha: 0; 
+	borderThickness: 1; 
+	symbolSize: 8; 
+	/**             Seventh contextual layer shown in the map, fillAlpha, borderAlpha and borderThickness affect the legend only.             */ 
+}
+.contextualLayer8 {
+	borderColor: #c0c0c0; 
+	fillColor: #ffffff; 
+	borderAlpha: 1; 
+	fillAlpha: 0; 
+	borderThickness: 1; 
+	symbolSize: 8; 
+	/**             Eighth contextual layer shown in the map, fillAlpha, borderAlpha and borderThickness affect the legend only.             */ 
+}
+.contextualLayer9 {
+	borderColor: #ffa500; 
+	fillColor: #ffffff; 
+	borderAlpha: 1; 
+	fillAlpha: 0; 
+	borderThickness: 1; 
+	symbolSize: 8; 
+	/**             Ninth contextual layer shown in the map, fillAlpha, borderAlpha and borderThickness affect the legend only.             */ 
+}
+.contextualLayer10 {
+	borderColor: #2f4f4f; 
+	fillColor: #ffffff; 
+	borderAlpha: 1; 
+	fillAlpha: 0; 
+	borderThickness: 1; 
+	symbolSize: 8; 
+	/**             Tenth contextual layer shown in the map, fillAlpha, borderAlpha and borderThickness affect the legend only.             */ 
+}
+.chartAxisTitles {
+	fontWeight: normal; 
+	color: #2e7799; 
+	fontFamily: Verdana; 
+	fontSize: 9; 
+	/**             Chart axis title text.             */ 
+}
+DataTip {
+	fontWeight: bold; 
+	backgroundColor: #eff8fd; 
+	color: #2e7799; 
+	fontStyle: normal; 
+	fontFamily: Verdana; 
+	fontSize: 10; 
+	/**             Chart tips.             */ 
+}
+.chartDataUnavailableText {
+	fontWeight: bold; 
+	color: #2e7799; 
+	letterSpacing: 0; 
+	fontStyle: normal; 
+	fontFamily: Verdana; 
+	fontSize: 11; 
+	textDecoration: none; 
+	/**             Chart data unavailable text.             */ 
+}
+.timeSeries {
+	fontWeight: normal; 
+	color: #2e7799; 
+	fontFamily: Verdana; 
+	itemRollOverColor: #44ffff; 
+	itemSelectionColor: #f69305; 
+	fontSize: 9; 
+	/**             Time series selection and highlight colours, plus axis text.             */ 
+}
+.timeSeriesXAxis {
+	canStagger: true; 
+	showLabels: true; 
+	canDropLabels: false; 
+	/**             Time series x-axis text.             */ 
+}
+.timeSeriesYAxis {
+	verticalAxisTitleAlignment: vertical; 
+	/**             Time series y-axis title text alignment.             */ 
+}
+.timeSeriesGridLines {
+	horizontalAlternateFill: #f9f9f9; 
+	horizontalFill: #ffffff; 
+	/**             Time series horizontal line fills.             */ 
+}
+.discreteTimeSeries {
+	fontWeight: normal; 
+	chartSeriesStyles: fillColor1,fillColor2,fillColor3,fillColor4,fillColor5,fillColor6,fillColor7,fillColor8; 
+	color: #2e7799; 
+	fontFamily: Verdana; 
+	fontSize: 9; 
+	/**             Discrete time series.             */ 
+}
+.fillColor1 {
+	fill: #b4371f; 
+	/**             Fill colour for discrete time series bar             */ 
+}
+.fillColor2 {
+	fill: #aec7e8; 
+	/**             Fill colour for discrete time series bar             */ 
+}
+.fillColor3 {
+	fill: #ffbb78; 
+	/**             Fill colour for discrete time series bar             */ 
+}
+.fillColor4 {
+	fill: #2ca02c; 
+	/**             Fill colour for discrete time series bar             */ 
+}
+.fillColor5 {
+	fill: #98df8a; 
+	/**             Fill colour for discrete time series bar             */ 
+}
+.fillColor6 {
+	fill: #d62728; 
+	/**             Fill colour for discrete time series bar             */ 
+}
+.fillColor7 {
+	fill: #ff9896; 
+	/**             Fill colour for discrete time series bar             */ 
+}
+.fillColor8 {
+	fill: #9467bd; 
+	/**             Fill colour for discrete time series bar             */ 
+}
+.discreteTimeSeriesYAxis {
+	verticalAxisTitleAlignment: vertical; 
+	/**             Discrete time series y-axis title text alignment.             */ 
+}
+.discreteTimeSeriesGridLines {
+	horizontalAlternateFill: #ffffff; 
+	horizontalFill: #ffffff; 
+	/**             Discrete time series horizontal line fills.             */ 
+}
+.flippedTimeSeries {
+	fontWeight: normal; 
+	chartSeriesStyles: fillColor1,fillColor2,fillColor3,fillColor4,fillColor5,fillColor6,fillColor7,fillColor8; 
+	color: #2e7799; 
+	fontFamily: Verdana; 
+	fontSize: 9; 
+	/**             Vertical time series.             */ 
+}
+.flippedTimeSeriesYAxis {
+	verticalAxisTitleAlignment: vertical; 
+	/**             Vertical time series y-axis title text alignment.             */ 
+}
+.pyramidChart {
+	fontWeight: normal; 
+	color: #2e7799; 
+	fontFamily: Verdana; 
+	itemRollOverColor: #44ffff; 
+	itemSelectionColor: #f69305; 
+	fontSize: 9; 
+	/**             Pyramid chart selection and highlight colours, plus axis text.             */ 
+}
+.pyramidYAxis {
+	verticalAxisTitleAlignment: vertical; 
+	/**             Vertical time series y-axis title text alignment.             */ 
+}
+.pyramidMales {
+	fill: #98bae3; 
+	/**             Fill colour for male side of pyramid             */ 
+}
+.pyramidFemales {
+	fill: #e398e3; 
+	/**             Fill colour for female side of pyramid             */ 
+}
+.barChart {
+	fontWeight: normal; 
+	color: #2e7799; 
+	fontFamily: Verdana; 
+	itemRollOverColor: #44ffff; 
+	itemSelectionColor: #f69305; 
+	fontSize: 9; 
+	/**             Bar chart selection and highlight colours, plus axis text.             */ 
+}
+.barChartYAxis {
+	verticalAxisTitleAlignment: vertical; 
+	/**             Bar chart y-axis title text alignment.             */ 
+}
+.barChartGridLines {
+	horizontalAlternateFill: #ffffff; 
+	horizontalFill: #ffffff; 
+	/**             Bar chart horizontal line fills.             */ 
+}
+.barSeries {
+	defaultBarColor: #cccccc; 
+	limitsColor: #73c1e6; 
+	/**             Bar chart limits and default bar colour.             */ 
+}
+.dotPlot {
+	fontWeight: normal; 
+	color: #2e7799; 
+	fontFamily: Verdana; 
+	itemRollOverColor: #44ffff; 
+	itemSelectionColor: #f69305; 
+	fontSize: 9; 
+	/**             Dot plot selection and highlight colours, plus axis text.             */ 
+}
+.dotPlotSeries {
+	adjustedRadius: 2; 
+	pointColor: #f9f9f9; 
+	radius: 5; 
+}
+.flippedBarChart {
+	fontWeight: normal; 
+	color: #2e7799; 
+	fontFamily: Verdana; 
+	itemRollOverColor: #44ffff; 
+	itemSelectionColor: #f69305; 
+	fontSize: 9; 
+	/**             Bar chart selection and highlight colours, plus axis text.             */ 
+}
+.flippedBarChartYAxis {
+	verticalAxisTitleAlignment: vertical; 
+	/**             Bar chart y-axis title text alignment.             */ 
+}
+.flippedBarSeries {
+	defaultBarColor: #cccccc; 
+	limitsColor: #73c1e6; 
+	/**             Bar chart limits and default bar colour.             */ 
+}
+.boxAndWhisker {
+	fontWeight: normal; 
+	color: #2e7799; 
+	fontFamily: Verdana; 
+	itemRollOverColor: #44ffff; 
+	itemSelectionColor: #f69305; 
+	fontSize: 9; 
+	/**             Box and whisker chart selection and highlight colours, plus axis text.             */ 
+}
+.boxAndWhiskerYAxis {
+	verticalAxisTitleAlignment: vertical; 
+	/**             Box and whisker chart y-axis title text alignment.             */ 
+}
+.boxAndWhiskerGridLines {
+	horizontalAlternateFill: #ffffff; 
+	horizontalFill: #ffffff; 
+	/**             Box and whisker chart horizontal line fills.             */ 
+}
+.boxAndWhiskerSeries {
+	defaultBarColor: #cccccc; 
+	limitsColor: #73c1e6; 
+	/**             Box and whisker chart limits and default bar colour.             */ 
+}
+.table {
+	borderColor: #cdeeff; 
+	fontWeight: normal; 
+	selectionColor: #f69305; 
+	rollOverColor: #44ffff; 
+	color: #2e7799; 
+	alternatingItemColors: #ffffff,#f9f9f9; 
+	verticalGridLineColor: #cdeeff; 
+	headerColors: #eff8fd,#cdeeff; 
+	fontFamily: Verdana; 
+	fontSize: 10; 
+	/**             Table selection and highlight colours, plus text and other table specific formatting.             */ 
+}
+.tableColumnHeaders {
+	fontWeight: bold; 
+	textAlign: center; 
+	color: #2e7799; 
+	fontFamily: Verdana; 
+	fontSize: 10; 
+	/**             Table column header text.             */ 
+}
+.comparisonAreas {
+	fillColors: #b4371f,#aec7e8,#ffbb78,#2ca02c,#98df8a,#d62728,#ff9896,#9467bd,#c5b0d5,#8c564b,#c49c94,#e377c2,#f7b6d2,#7f7f7f,#c7c7c7,#bcbd22,#dbdb8d,#17becf,#9edae5; 
+	/**             The comparison area colours             */ 
+}
+.comparisonAreas2 {
+	fillColors: #b4371f,#aec7e8,#ffbb78,#2ca02c,#98df8a,#d62728,#ff9896,#9467bd,#c5b0d5,#8c564b,#c49c94,#e377c2,#f7b6d2,#7f7f7f,#c7c7c7,#bcbd22,#dbdb8d,#17becf,#9edae5; 
+	/**             The comparison area colours for the second table             */ 
+}
+.legend {
+	legendRollOverColor: #44ffff; 
+	legendSelectionColor: #f69305; 
+	/**             Legend selection and highlight colours.             */ 
+}
+.legendLabels {
+	fontWeight: normal; 
+	color: #2e7799; 
+	fontStyle: normal; 
+	fontFamily: Verdana; 
+	fontSize: 10; 
+	/**             Legend labels.             */ 
+}
+Tree {
+	fontWeight: normal; 
+	backgroundColor: #ffffff; 
+	textAlign: left; 
+	color: #2e7799; 
+	depthColors: #eaeaea,#f9f9f9,#ffffff; 
+	fontFamily: Verdana; 
+	fontSize: 10; 
+	indentation: 10; 
+	/**             Data and Filter explorer trees.             */ 
+}
+.metaBoxText {
+	fontWeight: normal; 
+	color: #2e7799; 
+	fontFamily: Verdana; 
+	fontSize: 10; 
+	/**             Metadata text.             */ 
+}
+.statsText {
+	fontWeight: normal; 
+	color: #2e7799; 
+	fontFamily: Verdana; 
+	fontSize: 10; 
+	/**             Stats text.             */ 
+}
+.superTitleText {
+	fontWeight: bold; 
+	color: #2e7799; 
+	letterSpacing: 0; 
+	fontStyle: normal; 
+	fontFamily: Arial; 
+	fontSize: 18; 
+	textDecoration: none; 
+	/**             Main title at the top of the page.             */ 
+}
+.titleText {
+	fontWeight: bold; 
+	color: #2e7799; 
+	letterSpacing: 0; 
+	fontStyle: normal; 
+	fontFamily: Arial; 
+	fontSize: 14; 
+	textDecoration: none; 
+	/**             Title text available for user defined texts.             */ 
+}
+.subtitleText {
+	fontWeight: bold; 
+	color: #2e7799; 
+	letterSpacing: 0; 
+	fontStyle: italic; 
+	fontFamily: Arial; 
+	fontSize: 12; 
+	textDecoration: none; 
+	/**             Subtitle text available for user defined texts.             */ 
+}
+.text {
+	fontWeight: normal; 
+	color: #2e7799; 
+	letterSpacing: 0; 
+	fontStyle: normal; 
+	fontFamily: Arial; 
+	fontSize: 10; 
+	textDecoration: none; 
+	/**             Standard text available for user defined texts.             */ 
+}
+.iconButton {
+	borderColor: #73c1e6; 
+	/**             Icon buttons.             */ 
+}
+.button {
+	borderColor: #73c1e6; 
+	fontWeight: bold; 
+	cornerRadius: 6; 
+	textRollOverColor: #f69305; 
+	color: #2e7799; 
+	borderThickness: 2; 
+	fillColors: #eff8fd,#cdeeff; 
+	fontStyle: normal; 
+	fillAlphas: 1, 1; 
+	fontFamily: Verdana; 
+	fontSize: 10; 
+	/**             Standard buttons.             */ 
+}
+Slider {
+	fillColors: #73c1e6,#73c1e6; 
+	/**             Sliders             */ 
+}
+CheckBox {
+	borderColor: #73c1e6; 
+	fontWeight: normal; 
+	textSelectedColor: #2e7799; 
+	iconColor: #73c1e6; 
+	color: #2e7799; 
+	textRollOverColor: #2e7799; 
+	fillColors: #eff8fd,#cdeeff; 
+	fontStyle: normal; 
+	fillAlphas: 1, 1; 
+	fontFamily: Verdana; 
+	fontSize: 10; 
+	/**             Checkboxes.             */ 
+}
+ComboBox {
+	borderColor: #73c1e6; 
+	fontWeight: bold; 
+	cornerRadius: 5; 
+	textRollOverColor: #2e7799; 
+	color: #2e7799; 
+	fillColors: #eff8fd,#cdeeff; 
+	fontStyle: normal; 
+	fillAlphas: 1, 1; 
+	fontFamily: Verdana; 
+	fontSize: 10; 
+	/**             Combo boxes.             */ 
+}
+ToolTip {
+	fontWeight: bold; 
+	cornerRadius: 5; 
+	backgroundColor: #eff8fd; 
+	color: #2e7799; 
+	fontStyle: normal; 
+	fontFamily: Verdana; 
+	fontSize: 10; 
+	/**             Standard tooltips.             */ 
+}
+.spineChartPanel {
+	backgroundColor: #eff8fd; 
+	backgroundAlpha: 1; 
+	/**             The spine chart panel. Add properties to override the 'Panel styling'             */ 
+}
+.spineChart {
+	borderColor: #cdeeff; 
+	fontWeight: normal; 
+	barColors: #ffbb78,#aec7e8,#1f77b4,#98df8a,#9467bd,#bcbd22,#e7cb94,#fdbee6,#eaff9d,#99d1c5; 
+	gridLineColor: #eff8fd; 
+	rollOverColor: #44ffff; 
+	color: #2e7799; 
+	alternatingItemColors: #f9f9f9,#ffffff; 
+	verticalGridLineColor: #eaeaea; 
+	depthColors: #eaeaea,#f9f9f9; 
+	headerColors: #eff8fd,#cdeeff; 
+	fontFamily: Verdana; 
+	fontSize: 9; 
+	/**             Spine chart.             */ 
+}
+.advancedPieChartPanel {
+	backgroundAlpha: 1; 
+	/**             The advanced pie chart panel. Add properties to override the 'Panel styling'             */ 
+}
+.advancedPieSeries {
+	seriesColors: #ffbb78,#aec7e8,#1f77b4,#98df8a,#9467bd,#bcbd22,#e7cb94,#fdbee6,#eaff9d,#99d1c5; 
+	/**             Advanced pie chart             */ 
+}
+.advancedPieText {
+	fontWeight: normal; 
+	color: #2e7799; 
+	fontStyle: normal; 
+	fontFamily: Verdana; 
+	fontSize: 10; 
+	/**             The advanced pie chart labels.             */ 
+}
+.advancedPieLegend {
+	fontWeight: normal; 
+	color: #2e7799; 
+	fontStyle: normal; 
+	fontFamily: Verdana; 
+	fontSize: 10; 
+	/**             The advanced pie legend labels.             */ 
+}
+.radarChartPanel {
+	backgroundAlpha: 1; 
+	/**             The radar chart panel. Add properties to override the 'Panel styling'             */ 
+}
+.radarChart {
+	seriesAlpha: 0.2; 
+	fontWeight: normal; 
+	alternatingColors: #f9f9f9,#ffffff; 
+	seriesColors: #ffbb78,#aec7e8,#1f77b4,#98df8a,#9467bd,#bcbd22,#e7cb94,#fdbee6,#eaff9d,#99d1c5; 
+	seriesThickness: 2; 
+	color: #2e7799; 
+	fontFamily: Verdana; 
+	itemRollOverColor: #44ffff; 
+	gridThickness: 1; 
+	fontSize: 9; 
+	gridColor: #dddddd; 
+	gridAlpha: 1; 
+	/**             Radar chart selection and highlight colours, plus axis text.             */ 
+}
+.scatterPlotPanel {
+	backgroundAlpha: 1; 
+	/**             The scatter plot panel. Add properties to override the 'Panel styling'             */ 
+}
+.scatterPlot {
+	fontWeight: normal; 
+	color: #2e7799; 
+	fontFamily: Verdana; 
+	itemRollOverColor: #44ffff; 
+	itemSelectionColor: #f69305; 
+	fontSize: 9; 
+	/**             Scatter plot selection and highlight colours, plus axis text.             */ 
+}
+.scatterPlotYAxis {
+	verticalAxisTitleAlignment: vertical; 
+	/**             Scatter plot y-axis title text alignment.             */ 
+}
+.scatterPlotData {
+	lineThickness: 3; 
+	adjustedRadius: 1; 
+	lineColor: #73c1e6; 
+	lineAlpha: 0.7; 
+	pointColor: #424242; 
+	radius: 3; 
+	pointAlpha: 0.9; 
+	/**             Scatter plot data properties.             */ 
+}
+.correlationText {
+	fontWeight: normal; 
+	color: #2e7799; 
+	letterSpacing: 0; 
+	fontStyle: normal; 
+	fontFamily: Verdana; 
+	fontSize: 10; 
+	textDecoration: none; 
+	/**             Correlation text.             */ 
+}
+.timeSlider {
+	fontWeight: normal; 
+	trackColor: #73c1e6; 
+	color: #2e7799; 
+	fillColors: #73c1e6,#73c1e6; 
+	fontStyle: normal; 
+	fontFamily: Verdana; 
+	fontSize: 10; 
+	tickColor: #73c1e6; 
+	/**             The slider in the time animation             */ 
+}
+.search {
+	fontWeight: normal; 
+	color: #2e7799; 
+	fontStyle: normal; 
+	fontFamily: Verdana; 
+	fontSize: 11; 
+	/**             The search window.             */ 
+}

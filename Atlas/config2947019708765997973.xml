@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<AtlasInterface xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.instantatlas.com/xml/atlas" classes="Application backgroundRect backgroundRectPrint Panel popUpWindow windowTitleText ScrollBar superTitleText titleText subtitleText text iconButton button Slider CheckBox ComboBox ToolTip" name="Standard" schema-version="1.5" template="timeseries_advanced_sm::flash" width="800" xsi:schemaLocation="http://www.instantatlas.com/xml/atlas ../../../xml/atlas-ui-v1.4.xsd">
+<Component classes="Panel windowTitleText ScrollBar geogExplorerPanel Tree popUpWindow" editable="true" height="300" icon="$IAICON/48x48/text_code.png" id="geogExplorer" moveable="true" name="Geography Explorer" removeable="true" resizeable="true" visible="true" width="300" x="170" y="70">
+	<Description>The geography explorer component of the report.</Description>
+	<Property description="Show title bar" id="showTitleBar" name="Show Title Bar?" type="boolean" value="false" />
+	<Property description="The title of the geography explorer" id="title" name="Title" type="string" value="Geography Explorer" />
+	<Property description="If being used as a pop up window is it visible at start up? Use &apos;toggleGeogExplorer&apos; to toggle visibility." id="popUpVisible" name="PopUp Window Visible?" type="boolean" value="false" />
+	<Property description="Is the explorer a pop up window? Use &apos;toggleGeogExplorer&apos; to toggle visibility." id="popUp" name="PopUp Window?" type="boolean" value="true" />
+	<Property description="Should the explorer close after a selection?" id="closeOnSelection" name="Close On Selection?" type="boolean" value="true" />
+</Component>
+<Component classes="Panel windowTitleText ScrollBar dataExplorerPanel Tree popUpWindow" editable="true" height="192" icon="$IAICON/48x48/text_code.png" id="dataExplorer" moveable="true" name="Data Explorer" removeable="true" resizeable="true" visible="true" width="159" x="573" y="98">
+	<Description>The data explorer component of the report.</Description>
+	<Property description="Show title bar" id="showTitleBar" name="Show Title Bar?" type="boolean" value="false" />
+	<Property description="The title of the data explorer" id="title" name="Title" type="string" value="Data Explorer" />
+	<Property description="If being used as a pop up window is it visible at start up? Use &apos;toggleDataExplorer&apos; to toggle visibility." id="popUpVisible" name="PopUp Window Visible?" type="boolean" value="false" />
+	<Property description="Is the explorer a pop up window? Use &apos;toggleDataExplorer&apos; to toggle visibility." id="popUp" name="PopUp Window?" type="boolean" value="true" />
+	<Property description="Should the explorer close after a selection?" id="closeOnSelection" name="Close On Selection?" type="boolean" value="true" />
+	<Property description="Should the explorer data be expanded?" id="expandData" name="Expand Data?" type="boolean" value="true" />
+	<Property description="Should the explorer include dates? Set reverseDates to true to use latest date" id="includeDates" name="Include Dates?" type="boolean" value="true" />
+	<Property description="Should the explorer display dates in reverse order?" id="reverseDates" name="Reverse Date Order?" type="boolean" value="true" />
+</Component>
+<Component classes="Panel windowTitleText ScrollBar filterExplorerPanel Tree popUpWindow" editable="true" height="300" icon="$IAICON/48x48/text_code.png" id="filterExplorer" moveable="true" name="Filter Explorer" removeable="true" resizeable="true" visible="true" width="300" x="85" y="70">
+	<Description>The filter explorer component of the report.</Description>
+	<Property description="Show title bar" id="showTitleBar" name="Show Title Bar?" type="boolean" value="false" />
+	<Property description="The title of the filter explorer" id="title" name="Title" type="string" value="Filter Explorer" />
+	<Property description="If being used as a pop up window is it visible at start up? Use &apos;toggleFilterExplorer&apos; to toggle visibility." id="popUpVisible" name="PopUp Window Visible?" type="boolean" value="false" />
+	<Property description="Is the explorer a pop up window? Use &apos;toggleFilterExplorer&apos; to toggle visibility." id="popUp" name="PopUp Window?" type="boolean" value="true" />
+	<Property description="Should the explorer close after a selection?" id="closeOnSelection" name="Close On Selection?" type="boolean" value="true" />
+	<Property description="Should the explorer data be expanded?" id="expandData" name="Expand Data?" type="boolean" value="false" />
+	<Property description="Should the map attempt to zoom to a contextual area matching the filter?" id="zoomToFilter" name="Zoom To Filter?" type="boolean" value="true" />
+</Component>
+<Component classes="Panel windowTitleText ScrollBar mapPanel map mapText mapControl MapTip toolMenu baseLayer contextualLayer1 contextualLayer2 contextualLayer3 contextualLayer4 contextualLayer5 contextualLayer6 contextualLayer7 contextualLayer8 contextualLayer9 contextualLayer10" editable="true" height="335" icon="$IAICON/48x48/document_earth.png" id="map" moveable="true" name="Map" removeable="true" resizeable="true" visible="true" width="552" x="10" y="70">
+	<Description>The map component of the report.</Description>
+	<Property description="Show title bar" id="showTitleBar" name="Show Title Bar?" type="boolean" value="false" />
+	<Property description="The title of the map" id="title" name="Title" type="string" value="Map" />
+	<Property description="If being used as a pop up window is it visible at start up? Use &apos;toggleMap&apos; to toggle visibility." id="popUpVisible" name="PopUp Window Visible?" type="boolean" value="false" />
+	<Property description="Is the map a pop up window? Use &apos;toggleMap&apos; to toggle visibility." id="popUp" name="PopUp Window?" type="boolean" value="false" />
+	<Property description="The maximum amount a user can zoom in as a percentage of the full extents of the map" id="maxZoomAllowed" name="Max Zoom Allowed" type="float" value="1.0" />
+	<Property description="The data for the base layer" id="baseLayerData" name="Base Layer Data" type="string" value="value" />
+	<Property choices="none;single;multiple" description="The map selection mode" id="select" name="Map Select" type="string" value="multiple" />
+	<Property description="The time for the map zoom animation (in seconds), set to 0 for no animation" id="animationDuration" name="Animation Duration (seconds)" type="float" value="0.5" />
+	<Property description="Does the map include a tool bar" id="toolBar" name="Map Toolbar" type="boolean" value="true" />
+	<Property description="Does the map include a menu button" id="menuButton" name="Map Menu Button" type="boolean" value="true" />
+	<Property description="Any map copyright text" id="copyrightText" name="Map Copyright" type="string" value="© Copyright" />
+	<Property choices="top;bottom" description="Copyright position" id="copyrightPosition" name="Map Copyright Position" type="string" value="bottom" />
+	<Property description="Should the background mapping be switched on at start up?" id="showBackgroundMapping" name="Show Background Mapping?" type="boolean" value="false" />
+	<Property description="If true, only show one &apos;background mapping&apos; button in the layer list. If false, show one button per background layer." id="singleBackgroundMappingButton" name="Single Background Mapping Button?" type="boolean" value="true" />
+	<Property description="The label for the &apos;toggle background mapping&apos; checkbox" id="backgroundMappingLabel" name="Background Mapping Label" type="string" value="Background Mapping" />
+	<Property description="The path to any background images" id="backgroundMappingPath" name="Background Folder" type="string" value="./" />
+	<Property description="Should the map pre-load all contextual vector layers at startup, or wait for the user to click on the relevant button?" id="preLoadContextualLayers" name="Pre-load Contextual Layers?" type="boolean" value="false" />
+	<Property description="Which contextual layers should be visible? These layers will be automatically loaded even if &apos;Pre-load Contextual Layers&apos; is set to false" id="preLoadContextualVisibility" name="Visible Contextual Layers List" type="string-array" value="" />
+	<Property description="Are the contextual and background layers displayed in the legend?" id="showLayerList" name="Show Layers In Legend" type="boolean" value="true" />
+	<Property description="Which layers should display tips?" id="tipLayers" name="List Of Layers Displaying Tips" type="string-array" value="" />
+	<Property description="Which layers should display labels?" id="labelledLayers" name="List Of Layers Displaying Labels" type="string-array" value="" />
+	<Property description="Values between which labels should be displayed as a percentage of the starting map width eg &apos;100-0,75-25,25-10&apos;" id="displayLabelsBetween" name="List Of Display Ranges For labelled Layers" type="string-array" value="" />
+	<Property description="Which contextual layers should be displayed in the legend?" id="displayLayers" name="Contextual Layers Displayed In Legend" type="string-array" value="" />
+	<Property description="The data tip" id="tip" name="Tip" type="string" value="&lt;p&gt;${featureName}: ${indicatorValue}&lt;/p&gt;" />
+</Component>
+<Component classes="Panel windowTitleText ScrollBar pieChartPanel" editable="true" height="158" icon="$IAICON/48x48/pie-chart.png" id="pieChart" moveable="true" name="Pie Chart" removeable="true" resizeable="true" visible="true" width="160" x="573" y="247">
+	<Description>The pie chart component of the report.</Description>
+	<Property description="Show title bar" id="showTitleBar" name="Show Title Bar?" type="boolean" value="false" />
+	<Property description="The title of the chart" id="title" name="Title" type="string" value="Pie Chart" />
+	<Property description="If being used as a pop up window is it visible at start up? Use &apos;togglePieChart&apos; to toggle visibility." id="popUpVisible" name="PopUp Window Visible?" type="boolean" value="false" />
+	<Property description="Is the chart a pop up window? Use &apos;togglePieChart&apos; to toggle visibility." id="popUp" name="PopUp Window?" type="boolean" value="false" />
+	<Property description="Is the chart selectable?" id="select" name="Chart Select" type="boolean" value="true" />
+	<Property description="Is the chart highlightable?" id="highlight" name="Chart Highlight" type="boolean" value="true" />
+	<Property description="The time for the chart data change animation (in seconds), set to 0 for no animation" id="animationDuration" name="Animation Duration (seconds)" type="float" value="0.5" />
+</Component>
+<Table classes="Panel windowTitleText ScrollBar tablePanel table tableColumnHeaders" editable="true" height="170" icon="$IAICON/48x48/table_sql.png" id="table" moveable="true" name="Table" removeable="true" resizeable="true" visible="true" width="310" x="10" y="415">
+	<Description>The table component of the report.</Description>
+	<Property description="Show title bar" id="showTitleBar" name="Show Title Bar?" type="boolean" value="false" />
+	<Property description="The title of the table" id="title" name="Title" type="string" value="Table" />
+	<Property description="If being used as a pop up window is it visible at start up? Use &apos;toggleTable&apos; to toggle visibility." id="popUpVisible" name="PopUp Window Visible?" type="boolean" value="false" />
+	<Property description="Is the table a pop up window? Use &apos;toggleTable&apos; to toggle visibility." id="popUp" name="PopUp Window?" type="boolean" value="false" />
+	<Property choices="none;single;multiple" description="The table selection mode" id="select" name="Table Select" type="string" value="multiple" />
+	<Property description="The name of the table column which will be sorted" id="sortColumnName" name="Sort Column Name" type="string" value="name" />
+	<Property choices="Ascending;Descending" description="Sort the table data ascending / descending" id="sortDirection" name="Sort Direction" type="string" value="Ascending" />
+	<Property description="Should the end user be allowed to sort columns" id="allowUserSorting" name="Allow User Sorting?" type="boolean" value="true" />
+	<Property description="The height of each cell or row in the table" id="cellHeight" name="Cell Height" type="integer" value="20" />
+	<Property description="Should the table show legend colours in the rows" id="showRowColours" name="Show Row Colours?" type="boolean" value="false" />
+	<Column alias="" name="legendColour" width="0.0" />
+	<Column alias="Name" name="name" width="0.5" />
+	<Column alias="Democracy Index" name="value" width="0.5" />
+</Table>
+<Component classes="Panel windowTitleText ScrollBar legendPanel legend legendLabels" editable="true" height="137" icon="$IAICON/48x48/form_blue.png" id="legend" moveable="true" name="Legend" removeable="true" resizeable="true" visible="true" width="160" x="573" y="97">
+	<Description>The legend that shows the user information about the classification used by the components.</Description>
+	<Property description="Show title bar" id="showTitleBar" name="Show Title Bar?" type="boolean" value="false" />
+	<Property description="The title of the legend" id="title" name="Title" type="string" value="Legend" />
+	<Property description="If being used as a pop up window is it visible at start up? Use &apos;toggleLegend&apos; to toggle visibility." id="popUpVisible" name="PopUp Window Visible?" type="boolean" value="false" />
+	<Property description="Is the legend a pop up window? Use &apos;toggleLegend&apos; to toggle visibility." id="popUp" name="PopUp Window?" type="boolean" value="false" />
+	<Property description="Is the legend selectable?" id="select" name="Legend Select" type="boolean" value="true" />
+	<Property description="Is the legend highlightable?" id="highlight" name="Legend Highlight" type="boolean" value="true" />
+	<Property choices="equalInterval;quantile;natural;continuous;standardDeviation" description="The classification type to start the report with - one of &apos;equalInterval&apos;, &apos;quantile&apos;, &apos;natural&apos;, &apos;continuous&apos; or &apos;standardDeviation&apos;" id="defaultClassification" name="Classification Type" type="string" value="equalInterval" />
+	<Property description="Should the legend always be constrained between two fixed values, or not?" id="useMinMax" name="Use Legend Min and Max?" type="boolean" value="false" />
+	<Property description="A fixed minimum value for the legend" id="minValue" name="Legend Minimum" type="float" value="0.0" />
+	<Property description="A fixed maximum value for the legend" id="maxValue" name="Legend Maximum" type="float" value="300.0" />
+	<Property description="The size that will be used for legend symbols" id="symbolSize" name="Symbol Size" type="integer" value="10" />
+	<Property description="Does the legend use proportional symbols for points" id="usePointProportionalSymbols" name="Point Proportional Symbols" type="boolean" value="true" />
+	<Property description="The smallest point size that will be used when displaying proportional symbols" id="minPointSymbolSize" name="Point Symbol Min Size" type="integer" value="5" />
+	<Property description="The largest point size that will be used when displaying proportional symbols" id="maxPointSymbolSize" name="Point Symbol Max Size" type="integer" value="30" />
+	<Property description="The custom classifier property. The custom classifier property value contains one of &apos;equalInterval&apos;, &apos;quantile&apos;, &apos;natural&apos;, &apos;continuous&apos; or &apos;standardDeviation&apos;" id="customClassifierKey" name="Custom Classifier Property Id" value="customClassifier" />
+	<Property description="The custom colours property. The custom colours property value contains a semi-colon delimited list of colours of the form &apos;#ffff00;rgb(155,234,100);#0000ff&apos;" id="customColoursKey" name="Custom Colours Property Id" value="customColours" />
+	<Property description="The custom breaks property. The custom breaks property value contains a semi-colon delimited list of values of the form &apos;0;10;20;80&apos;" id="customBreaksKey" name="Custom Breaks Property Id" value="customBreaks" />
+	<Property description="The custom labels property. The custom labels property value contains a  semi-colon delimited list of labels of the form &apos;high;medium;low&apos;" id="customLabelsKey" name="Custom Labels Property Id" value="customLabels" />
+	<Property description="The custom palette property. The custom palette property value contains a reference to a palette." id="customPaletteKey" name="Custom Palette Property Id" value="customPalette" />
+</Component>
+<PropertyGroup id="txtI" name="Print Window Text">
+	<Property description="The print preview title" id="PRINT_WIN_TITLE" name="Window Title" type="string" value="Print Preview" />
+	<Property description="The print preview &apos;Print full screen&apos; option" id="PRINT_FULL_SCREEN" name="Print Full Screen" type="string" value="Print full screen" />
+	<Property description="The print preview &apos;print&apos; button text" id="PRINT_BUTTON" name="Print Button" type="string" value="Print" />
+	<Property description="The print preview &apos;vector&apos; text" id="PRINT_AS_VECTOR" name="Vector Text" type="string" value="Print As Vector (best quality)" />
+	<Property description="The print preview &apos;bitmap&apos; text" id="PRINT_AS_BITMAP" name="Bitmap Text" type="string" value="Print As Bitmap (supports transparency)" />
+	<Property description="The print preview &apos;show button&apos; text" id="PRINT_DISPLAY_BUTTONS" name="Show Button Text" type="string" value="Show Buttons" />
+	<Property description="The print preview &apos;show images&apos; text" id="PRINT_DISPLAY_IMAGES" name="Show Images Text" type="string" value="Show Images" />
+	<Property description="The print preview &apos;show text&apos; text" id="PRINT_DISPLAY_TEXT" name="Show Text Text" type="string" value="Show Text" />
+	<Property description="The print preview &apos;show background&apos; text" id="PRINT_DISPLAY_BACKGROUND" name="Show Background Text" type="string" value="Show Background" />
+	<Property description="The print preview &apos;resize&apos; text" id="PRINT_RESIZE" name="Resize Text" type="string" value="Resize to fit page" />
+	<Property description="The print preview &apos;rescale&apos; text" id="PRINT_RESCALE" name="Rescale Text" type="string" value="Rescale to fit page" />
+	<Property description="The print &apos;error&apos; text" id="PRINT_ERROR" name="Print Error Text" type="string" value="Print Failed" />
+</PropertyGroup>
+<PropertyGroup id="txtJ" name="Export Window Text">
+	<Property description="The export windows title" id="EXPORT_WIN_TITLE" name="Window Title" type="string" value="Export Options" />
+	<Property description="The export windows &apos;Export full screen&apos; option" id="EXPORT_FULL_SCREEN" name="Export Full Screen" type="string" value="Export full screen" />
+	<Property description="The export windows &apos;vector&apos; text" id="EXPORT_SAVE_AS_JPEG" name="Save As JPEG Text" type="string" value="Save As JPEG" />
+	<Property description="The export windows &apos;bitmap&apos; text" id="EXPORT_SAVE_AS_PNG" name="Save As PNG Text" type="string" value="Save As PNG" />
+	<Property description="The export windows &apos;export&apos; button text" id="EXPORT_BUTTON" name="Export Button" type="string" value="Export" />
+	<Property description="The export &apos;error&apos; text" id="EXPORT_ERROR" name="Export Error Text" type="string" value="Export Failed" />
+</PropertyGroup>
+<PropertyGroup id="txtQ" name="Text Window Text">
+	<Property description="The text windows title" id="TEXT_WIN_TITLE" name="Window Title" type="string" value="Text Editor" />
+	<Property description="The text windows &apos;add&apos; button text" id="TEXT_ADD_BUTTON" name="Add Button" type="string" value="Add" />
+	<Property description="The text windows &apos;remove&apos; button text" id="TEXT_REMOVE_BUTTON" name="Remove Button" type="string" value="Remove All" />
+</PropertyGroup>
+<PropertyGroup id="txtR" name="Shape Window Text">
+	<Property description="The text windows title" id="SHAPE_WIN_TITLE" name="Window Title" type="string" value="Shape Editor" />
+	<Property description="The text windows &apos;add&apos; button text" id="SHAPE_ADD_BUTTON" name="Add Button" type="string" value="Add" />
+	<Property description="The text windows &apos;remove&apos; button text" id="SHAPE_REMOVE_BUTTON" name="Remove Button" type="string" value="Remove All" />
+</PropertyGroup>
+<PropertyGroup id="legendEditorSettings" name="Legend Window">
+	<Property description="Allow the user to edit the legend?" id="includeLegendEditor" name="Include Legend Editor Button?" type="boolean" value="true" />
+	<Property description="Is the base layer tick checkbox displayed?" id="includeCheckbox" name="Include Base Layer Checkbox?" type="boolean" value="true" />
+	<Property description="The classifier types included in the legend menu" id="legendClassifiers" name="Classifiers" type="string-array" value="&apos;equalInterval&apos;,&apos;quantile&apos;,&apos;natural&apos;,&apos;continuous&apos;,&apos;standardDeviation&apos;" />
+	<Property description="Does the legend editor include a classifier menu?" id="includeClassifierMenu" name="Include Classifier Menu?" type="boolean" value="true" />
+	<Property description="Does the legend editor include a palette menu?" id="includePaletteMenu" name="Include Palette Menu?" type="boolean" value="true" />
+	<Property description="Does the legend editor include a transparency slider?" id="includeAlphaSlider" name="Include Transparency Slider?" type="boolean" value="true" />
+	<Property description="Does the legend editor include a border colour selector?" id="includeColorSelector" name="Include Colour Selector?" type="boolean" value="true" />
+	<Property description="Does the legend editor include a class number selector?" id="includeClassSelector" name="Include Class Selector?" type="boolean" value="true" />
+</PropertyGroup>
+<PropertyGroup id="txtK" name="Legend Window Text">
+	<Property description="The legend editors title" id="LEGEND_SETTINGS_TITLE" name="Window Title" type="string" value="Legend Settings" />
+	<Property description="The legend editors &apos;border&apos; text" id="LEGEND_BORDER_COLOUR" name="Border Text" type="string" value="Border Color" />
+	<Property description="The legend editors &apos;transparency&apos; text" id="LEGEND_TRANSPARENCY" name="Transparency Text" type="string" value="Transparency" />
+	<Property description="The legend editors &apos;number of classes&apos; text" id="LEGEND_NUMBER_OF_CLASSES" name="No Classes Text" type="string" value="No. Classes" />
+	<Property description="The legend editors &apos;classifier&apos; text" id="LEGEND_CLASSIFIERS" name="Classifier Text" type="string" value="Classifiers" />
+	<Property description="The legend editors &apos;palette&apos; text" id="LEGEND_PALETTE" name="Palette Text" type="string" value="Palette" />
+	<Property description="The legend editors &apos;reverse palette&apos; text" id="LEGEND_REVERSE_PALETTE" name="Reverse Palette Text" type="string" value="Reverse Palette" />
+	<Property description="The legend editors &apos;minimum point size&apos; text" id="LEGEND_MIN_POINT_SIZE" name="Minimum Point Size Text" type="string" value="Min Point Size" />
+	<Property description="The legend editors &apos;maximum point size&apos; text" id="LEGEND_MAX_POINT_SIZE" name="Maximum Point Size Text" type="string" value="Max Point Size" />
+</PropertyGroup>
+<PropertyGroup id="txtL" name="Legend Classifier Text">
+	<Property description="The &apos;Equal Interval&apos; text" id="EQUAL_INTERVAL" name="Equal Interval Text" type="string" value="Equal Interval" />
+	<Property description="The &apos;Quantile&apos; text" id="QUANTILE" name="Quantile Text" type="string" value="Quantile" />
+	<Property description="The &apos;Natural Break&apos; text" id="NATURAL" name="Natural Break Text" type="string" value="Natural Breaks" />
+	<Property description="The &apos;Continuous&apos; text" id="CONTINUOUS" name="Continuous Text" type="string" value="Continuous" />
+	<Property description="The &apos;Standard Deviation&apos; text" id="STANDARD_DEVIATION" name="Standard Deviation Text" type="string" value="Standard Deviation" />
+	<Property description="The text for band 1 of the standard deviation classification" id="SD_1" name="Band 1 Text" type="string" value="&gt; 2 SD below mean" />
+	<Property description="The text for band 2 of the standard deviation classification" id="SD_2" name="Band 2 Text" type="string" value="1 - 2 SD below mean" />
+	<Property description="The text for band 3 of the standard deviation classification" id="SD_3" name="Band 3 Text" type="string" value="0 - 1 SD below mean" />
+	<Property description="The text for band 4 of the standard deviation classification" id="SD_4" name="Band 4 Text" type="string" value="0 - 1 SD above mean" />
+	<Property description="The text for band 5 of the standard deviation classification" id="SD_5" name="Band 5 Text" type="string" value="1 - 2 SD above mean" />
+	<Property description="The text for band 6 of the standard deviation classification" id="SD_6" name="Band 6 Text" type="string" value="&gt; 2 SD above mean" />
+</PropertyGroup>
+<PropertyGroup id="panelControls" name="Components">
+	<Property description="Should the components show a control bar?" id="showControlBar" name="Show All Component Controls?" type="boolean" value="true" />
+	<Property description="Should the components control bar only be visible when the mouse is hovered over it?" id="showControlBarOnMouseover" name="Visible On Mouse Hover?" type="boolean" value="true" />
+	<Property description="Should the components show a drag button?" id="showDragButton" name="Show Drag Button?" type="boolean" value="true" />
+	<Property description="Should the components show a resize button?" id="showResizeButton" name="Show Resize Button?" type="boolean" value="true" />
+	<Property description="Should the components show a close button?" id="showCloseButton" name="Show Close Button?" type="boolean" value="true" />
+	<Property description="Can the user resize the components by dragging the edges?" id="allowResize" name="Allow Resize?" type="boolean" value="true" />
+	<Property description="Can the user drag the component?" id="allowDrag" name="Allow Drag?" type="boolean" value="true" />
+</PropertyGroup>
+<PropertyGroup id="txtE" name="Component Text">
+	<Property description="The text for the &apos;drag&apos; button tip" id="DRAG_BUTTON" name="Drag Tip" type="string" value="Drag" />
+	<Property description="The text for the &apos;maximise&apos; button tip" id="MAXIMIZE_BUTTON" name="Maximise Tip" type="string" value="Maximise" />
+	<Property description="The text for the &apos;restore down&apos; button tip" id="RESTORE_DOWN_BUTTON" name="Restore Down Tip" type="string" value="Restore Down" />
+	<Property description="The text for the &apos;close&apos; button tip" id="CLOSE_BUTTON" name="Close Tip" type="string" value="Close" />
+</PropertyGroup>
+<PropertyGroup id="dataFormatting" name="Data Formatting">
+	<Property description="The data to be used for all chart sorting" id="chartSortName" name="Chart Sort Data" type="string" value="value" />
+	<Property choices="Ascending;Descending" description="Sort all chart data ascending / descending" id="chartSortDirection" name="Chart Sort Direction" type="string" value="Ascending" />
+	<Property choices="en;de;es;fr;it;nl;be;ca;cs;da;el;et;fi;hr;hu;is;lt;lv;mk;no;pl;pt;ro;ru;sk;sl;sq;sr;sv;tr;uk" description="The locale used for formatting numbers, e.g. &apos;en&apos; for English, &apos;es&apos; for Spanish, &apos;fr&apos; for French" id="locale" name="Locale" type="string" value="en" />
+	<Property description="The number of decimal places to be shown for precision data in tables and tips. Set to -1 to disable" id="ndecimal" name="Table Decimal Places" type="integer" value="-1" />
+	<Property description="The number of decimal places to be shown for precision data in legends. Set to -1 to disable" id="ndecimalLegend" name="Legend Decimal Places" type="integer" value="1" />
+	<Property description="The text displayed for features that have &apos;No Data&apos; or null values" id="noDataValue" name="No Data Value" type="string" value="No Data" />
+</PropertyGroup>
+<PropertyGroup id="screenFormatting" name="Screen Formatting">
+	<Property description="A fixed width for the Atlas. Minimum width recommended is 800. Set to -1 to stretch to fit screen." id="fixedWidth" name="Fixed Width" type="integer" value="-1" />
+	<Property description="A fixed height for the Atlas. Minimum height recommended is 600. Set to -1 to stretch to fit screen." id="fixedHeight" name="Fixed Height" type="integer" value="-1" />
+	<Property description="A background image for the report. This image does not scale" id="backgroundImageUrl" name="Background Image" type="string" value="" />
+</PropertyGroup>
+<PropertyGroup id="contextMenu" name="Context Menu">
+	<Property description="Include &apos;Clear Selection&apos; in context menu?" id="showClearSelection" name="Clear Selection?" type="boolean" value="true" />
+	<Property description="Include &apos;Clear Comparison Selection&apos; in context menu?" id="showClearComparisonSelection" name="Clear Comparison Selection?" type="boolean" value="false" />
+	<Property description="Include &apos;Filter Selection&apos; in context menu?" id="showFilterSelection" name="Filter Selection?" type="boolean" value="true" />
+	<Property description="Include &apos;Clear Filter&apos; in context menu?" id="showClearFilter" name="Clear Filter?" type="boolean" value="true" />
+	<Property description="Include &apos;Reset Layout&apos; in context menu?" id="showReset" name="Reset Layout?" type="boolean" value="true" />
+	<Property description="Include &apos;Print&apos; in context menu?" id="showPrint" name="Print?" type="boolean" value="true" />
+	<Property description="Include &apos;Export&apos; in context menu?" id="showExport" name="Export?" type="boolean" value="true" />
+	<Property description="Include &apos;Add Text&apos; in context menu?" id="showText" name="Add Text?" type="boolean" value="true" />
+	<Property description="Include &apos;Add Shape&apos; in context menu?" id="showShape" name="Add Shape?" type="boolean" value="true" />
+	<Property description="Include &apos;About&apos; in context menu?" id="showAbout" name="About?" type="boolean" value="true" />
+</PropertyGroup>
+<PropertyGroup id="txtM" name="Context Menu Text">
+	<Property description="The context menu &apos;Reset Layout&apos; text" id="CONTEXT_RESET_LAYOUT" name="Reset Layout Text" type="string" value="Reset Layout" />
+	<Property description="The context menu &apos;Clear Selection&apos; text" id="CONTEXT_CLEAR_SELECTION" name="Clear Selection Text" type="string" value="Clear Selection" />
+	<Property description="The context menu &apos;Clear Comparison Selection&apos; text" id="CONTEXT_CLEAR_COMPARISON_SELECTION" name="Clear Comparison Selection Text" type="string" value="Clear Comparison Selection" />
+	<Property description="The context menu &apos;Filter Selection&apos; text" id="CONTEXT_FILTER_SELECTION" name="Filter Selection Text" type="string" value="Filter Selection" />
+	<Property description="The context menu &apos;Clear Filter&apos; text" id="CONTEXT_CLEAR_FILTER" name="Clear Filter Text" type="string" value="Clear Filter" />
+	<Property description="The context menu &apos;Export&apos; text" id="CONTEXT_EXPORT" name="Export Text" type="string" value="Export" />
+	<Property description="The context menu &apos;Print&apos; text. The word &apos;Print&apos; is a reserved word and is not allowed" id="CONTEXT_PRINT" name="Print Preview Text" type="string" value="Print Preview" />
+	<Property description="The context menu &apos;Add Text&apos; text." id="CONTEXT_TEXT" name="Add Text Text" type="string" value="Add Text" />
+	<Property description="The context menu &apos;Add Shape&apos; text." id="CONTEXT_SHAPE" name="Add Shape Text" type="string" value="Add Shape" />
+	<Property description="The context menu &apos;About&apos; text. The word &apos;About&apos; is a reserved word and is not allowed" id="CONTEXT_ABOUT" name="About Text" type="string" value="About InstantAtlas" />
+</PropertyGroup>
+<PropertyGroup id="txtA" name="Filter Text">
+	<Property description="The text for the remove filter option" id="REMOVE_FILTER" name="The &apos;Remove Filter&apos; Text" type="string" value="Remove Filter" />
+</PropertyGroup>
+<PropertyGroup id="txtB" name="Loading Bar Text">
+	<Property description="The text shown on-screen when attribute data are loading" id="LOAD_ATTRIBUTE" name="Loading Attribute Data" type="string" value="Loading Attribute Data" />
+	<Property description="The text shown on-screen when spatial data are loading" id="LOAD_SPATIAL" name="Loading Spatial Data" type="string" value="Loading Spatial Data" />
+</PropertyGroup>
+<PropertyGroup id="txtC" name="No Data Text For Charts">
+	<Property description="The text shown on-screen when there are no chart data available" id="NO_CHART_DATA" name="No Chart Data Label" type="string" value="No data available" />
+</PropertyGroup>
+<PropertyGroup id="txtD" name="Limits Text">
+	<Property description="The text that prefixes &apos;lower limit&apos; values in tooltips." id="LOWER_LIMIT" name="Lower Limit Prefix" type="string" value="LL: " />
+	<Property description="The text that prefixes &apos;upper limit&apos; values in tooltips." id="UPPER_LIMIT" name="Upper Limit Prefix" type="string" value="UL: " />
+</PropertyGroup>
+<PropertyGroup id="txtF" name="Table Text">
+	<Property description="The text for the tables &apos;zoom to&apos; button tip" id="ZOOM_TO" name="Zoom Tip" type="string" value="Zoom To" />
+	<Property description="The text for the tables &apos;metadata&apos; button tip" id="METADATA" name="Metadata Tip " type="string" value="Notes For" />
+	<Property description="The table column header tip" id="TABLE_COLUMN_SORT" name="Column Header Tip" type="string" value="Click to sort" />
+</PropertyGroup>
+<PropertyGroup id="txtG" name="Map Control Tips">
+	<Property description="The text for the maps zoom in button tip" id="ZOOM_IN" name="Zoom In Tip" type="string" value="Zoom In" />
+	<Property description="The text for the maps zoom out button tip" id="ZOOM_OUT" name="Zoom Out Tip" type="string" value="Zoom Out" />
+	<Property description="The text for the maps zoom full button tip" id="ZOOM_FULL" name="Zoom Full Tip" type="string" value="Zoom Full" />
+	<Property description="The text for the maps menu tip" id="TOOL_MENU" name="Map Menu" type="string" value="Menu" />
+	<Property description="Google layer list text" id="GOOGLE_NORMAL" name="Google Layer List Text" type="string" value="Map" />
+	<Property description="Google layer list text" id="GOOGLE_SATELLITE" name="Google Layer List Text" type="string" value="Satellite" />
+	<Property description="Google layer list text" id="GOOGLE_PHYSICAL" name="Google Layer List Text" type="string" value="Terrain" />
+	<Property description="Google layer list text" id="GOOGLE_HYBRID" name="Google Layer List Text" type="string" value="Hybrid" />
+</PropertyGroup>
+<PropertyGroup id="txtH" name="Message Text">
+	<Property description="The text displayed in the message when no notes are available" id="NO_NOTES" name="No Notes Message" type="string" value="No notes available" />
+	<Property description="The text displayed in the message when the legend encounters classification problems" id="LEGEND_ERROR" name="Legend Error Message" type="string" value="Problems encountered with the selected classification. Defaulting to Equal Interval" />
+</PropertyGroup>
+<PropertyGroup id="txtN" name="Explorer Text">
+	<Property description="The text for the &apos;exand all&apos; button tip" id="EXPAND_ALL" name="Expand All Tip" type="string" value="Expand All" />
+	<Property description="The text for the &apos;collapse all&apos; button tip" id="COLLAPSE_ALL" name="Collapse All Tip " type="string" value="Collapse All" />
+</PropertyGroup>
+<PropertyGroup id="txtO" name="Time Slider Tips">
+	<Property description="The text for the &apos;backwards&apos; button tip" id="BACKWARDS_BUTTON" name="Backwards Tip" type="string" value="Backwards" />
+	<Property description="The text for the &apos;forwards&apos; button tip" id="FORWARDS_BUTTON" name="Forwards Tip" type="string" value="Forwards" />
+	<Property description="The text for the &apos;play&apos; button tip" id="PLAY_BUTTON" name="Play Tip" type="string" value="Play" />
+	<Property description="The text for the &apos;animation speed&apos; slider tip" id="SPEED_SLIDER" name="Animation Delay Tip" type="string" value="Animation Delay (seconds)" />
+</PropertyGroup>
+<PropertyGroup id="txtP" name="Box and Whisker chart Tips">
+	<Property description="The text for &apos;open&apos;" id="CS_OPEN" name="Open Text" type="string" value="Open" />
+	<Property description="The text for &apos;close&apos;" id="CS_CLOSE" name="Close Text" type="string" value="Close" />
+	<Property description="The text for &apos;high&apos;" id="CS_HIGH" name="High Text" type="string" value="High" />
+	<Property description="The text for &apos;low&apos;" id="CS_LOW" name="Low Text" type="string" value="Low" />
+</PropertyGroup>
+<Text anchor="start" editable="true" fill="#6699FF" font-family="HelveticaNeueLT Com 25 UltLt" font-size="18.0" font-style="normal" font-weight="bold" id="titleText" moveable="true" removeable="true" resizeable="true" rotate="0" wrap-width="500" x="11" y="40">${date}</Text>
+<Button editable="true" height="19" href="script:toggleDataExplorer" id="dataButton" moveable="true" removeable="true" resizeable="true" text="Year" tooltip="Click to choose a year" width="70" x="572" y="70" />
+<MapPalettes classes="4" default="Sequential Blue" maxclasses="10">
+	<ColourRange id="Sequential Blue">
+		<Colour>#ccccff</Colour>
+		<Colour>#74a9cf</Colour>
+		<Colour>#023858</Colour>
+	</ColourRange>
+	<ColourRange id="Sequential Blue Bright">
+		<Colour>#eff3ff</Colour>
+		<Colour>#bdd7e7</Colour>
+		<Colour>#6baed6</Colour>
+		<Colour>#3182bd</Colour>
+		<Colour>#08519c</Colour>
+	</ColourRange>
+	<ColourRange id="Sequential Blue Yellow">
+		<Colour>#ffffd9</Colour>
+		<Colour>#7fcddb</Colour>
+		<Colour>#0c2c83</Colour>
+	</ColourRange>
+	<ColourRange id="Sequential Green">
+		<Colour>#edf8e9</Colour>
+		<Colour>#bae4b3</Colour>
+		<Colour>#74c476</Colour>
+		<Colour>#31a354</Colour>
+		<Colour>#006d2c</Colour>
+	</ColourRange>
+	<ColourRange id="Sequential Green Yellow">
+		<Colour>#ffffe5</Colour>
+		<Colour>#addd8e</Colour>
+		<Colour>#005a32</Colour>
+	</ColourRange>
+	<ColourRange id="Sequential Red">
+		<Colour>#fee5d9</Colour>
+		<Colour>#fcae91</Colour>
+		<Colour>#fb6a4a</Colour>
+		<Colour>#de2d26</Colour>
+		<Colour>#a50f15</Colour>
+	</ColourRange>
+	<ColourRange id="Sequential Red Yellow">
+		<Colour>#ffffcc</Colour>
+		<Colour>#feb24c</Colour>
+		<Colour>#b10026</Colour>
+	</ColourRange>
+	<ColourRange id="Sequential Brown Yellow">
+		<Colour>#ffffd4</Colour>
+		<Colour>#fed98e</Colour>
+		<Colour>#fe9929</Colour>
+		<Colour>#d95f0e</Colour>
+		<Colour>#993404</Colour>
+	</ColourRange>
+	<ColourRange id="Sequential Purple">
+		<Colour>#feebe2</Colour>
+		<Colour>#fbb4b9</Colour>
+		<Colour>#f768a1</Colour>
+		<Colour>#c51b8a</Colour>
+		<Colour>#7a0177</Colour>
+	</ColourRange>
+	<ColourRange id="Sequential Grey">
+		<Colour>#ffffff</Colour>
+		<Colour>#bdbdbd</Colour>
+		<Colour>#252525</Colour>
+	</ColourRange>
+	<ColourRange id="Diverging Blue to Red (Classic)">
+		<Colour>#ac312e</Colour>
+		<Colour>#dcacac</Colour>
+		<Colour>#ffecec</Colour>
+		<Colour>#8b91ff</Colour>
+		<Colour>#333365</Colour>
+	</ColourRange>
+	<ColourRange id="Diverging Blue to Red (Rich)">
+		<Colour>#ca0020</Colour>
+		<Colour>#f4a582</Colour>
+		<Colour>#eef1f2</Colour>
+		<Colour>#92c5de</Colour>
+		<Colour>#0571b0</Colour>
+	</ColourRange>
+	<ColourRange id="Diverging Blue Yellow Red">
+		<Colour>#ca373b</Colour>
+		<Colour>#fdae61</Colour>
+		<Colour>#ffffbf</Colour>
+		<Colour>#abd9e9</Colour>
+		<Colour>#2c7bb6</Colour>
+	</ColourRange>
+	<ColourRange id="Diverging Green Yellow Red">
+		<Colour>#d7191c</Colour>
+		<Colour>#fdae61</Colour>
+		<Colour>#ffffbf</Colour>
+		<Colour>#a6d96a</Colour>
+		<Colour>#1a9641</Colour>
+	</ColourRange>
+	<ColourRange id="Diverging Purple to Green">
+		<Colour>#762a83</Colour>
+		<Colour>#e7d4e8</Colour>
+		<Colour>#f7f7f7</Colour>
+		<Colour>#d9f0d3</Colour>
+		<Colour>#1b7837</Colour>
+	</ColourRange>
+	<ColourRange id="Diverging Purple to Orange">
+		<Colour>#e66101</Colour>
+		<Colour>#fdb863</Colour>
+		<Colour>#f7f7f7</Colour>
+		<Colour>#b2abd2</Colour>
+		<Colour>#5e3c99</Colour>
+	</ColourRange>
+	<ColourRange id="Diverging Grey to Red">
+		<Colour>#ca0020</Colour>
+		<Colour>#f4a582</Colour>
+		<Colour>#f7f7f7</Colour>
+		<Colour>#bababa</Colour>
+		<Colour>#404040</Colour>
+	</ColourRange>
+	<ColourScheme id="categoricScheme1">
+		<ColourMatch for="__next">#8dd3c7</ColourMatch>
+		<ColourMatch for="__next">#ffffbc</ColourMatch>
+		<ColourMatch for="__next">#bebada</ColourMatch>
+		<ColourMatch for="__next">#fb8072</ColourMatch>
+		<ColourMatch for="__next">#80b1d3</ColourMatch>
+		<ColourMatch for="__next">#fdb462</ColourMatch>
+		<ColourMatch for="__next">#b3de69</ColourMatch>
+		<ColourMatch for="__next">#fccdef</ColourMatch>
+	</ColourScheme>
+	<ColourScheme id="categoricScheme2">
+		<ColourMatch for="__next">#fbb3ad</ColourMatch>
+		<ColourMatch for="__next">#b2cce2</ColourMatch>
+		<ColourMatch for="__next">#ccebc5</ColourMatch>
+		<ColourMatch for="__next">#decbe4</ColourMatch>
+		<ColourMatch for="__next">#fed9a5</ColourMatch>
+		<ColourMatch for="__next">#ffffcc</ColourMatch>
+		<ColourMatch for="__next">#e4d7bc</ColourMatch>
+		<ColourMatch for="__next">#fddaec</ColourMatch>
+	</ColourScheme>
+	<ColourScheme id="categoricScheme3">
+		<ColourMatch for="__next">#e31a1c</ColourMatch>
+		<ColourMatch for="__next">#377db8</ColourMatch>
+		<ColourMatch for="__next">#4daf4a</ColourMatch>
+		<ColourMatch for="__next">#984ea3</ColourMatch>
+		<ColourMatch for="__next">#ff7f00</ColourMatch>
+		<ColourMatch for="__next">#ffff33</ColourMatch>
+		<ColourMatch for="__next">#a65628</ColourMatch>
+		<ColourMatch for="__next">#f781bf</ColourMatch>
+	</ColourScheme>
+	<ColourScheme id="categoricScheme4">
+		<ColourMatch for="__next">#b3e2cd</ColourMatch>
+		<ColourMatch for="__next">#fdcdac</ColourMatch>
+		<ColourMatch for="__next">#cbd5a8</ColourMatch>
+		<ColourMatch for="__next">#f4cae4</ColourMatch>
+		<ColourMatch for="__next">#e6f5c9</ColourMatch>
+		<ColourMatch for="__next">#fff2ae</ColourMatch>
+		<ColourMatch for="__next">#f1e2cc</ColourMatch>
+		<ColourMatch for="__next">#cccccc</ColourMatch>
+	</ColourScheme>
+	<ColourScheme id="categoricScheme5">
+		<ColourMatch for="__next">#66c2a5</ColourMatch>
+		<ColourMatch for="__next">#fc8d62</ColourMatch>
+		<ColourMatch for="__next">#8da0cb</ColourMatch>
+		<ColourMatch for="__next">#e78ac3</ColourMatch>
+		<ColourMatch for="__next">#a6d854</ColourMatch>
+		<ColourMatch for="__next">#ffd92f</ColourMatch>
+		<ColourMatch for="__next">#e5c494</ColourMatch>
+		<ColourMatch for="__next">#b3b3b3</ColourMatch>
+	</ColourScheme>
+	<ColourScheme id="categoricScheme6">
+		<ColourMatch for="__next">#1b9e77</ColourMatch>
+		<ColourMatch for="__next">#d95f02</ColourMatch>
+		<ColourMatch for="__next">#7570b3</ColourMatch>
+		<ColourMatch for="__next">#e7298a</ColourMatch>
+		<ColourMatch for="__next">#66a61e</ColourMatch>
+		<ColourMatch for="__next">#e6ab02</ColourMatch>
+		<ColourMatch for="__next">#a6761d</ColourMatch>
+		<ColourMatch for="__next">#666666</ColourMatch>
+	</ColourScheme>
+	<ColourScheme id="categoricScheme7">
+		<ColourMatch for="__next">#a6cee3</ColourMatch>
+		<ColourMatch for="__next">#1f77b4</ColourMatch>
+		<ColourMatch for="__next">#b2df8a</ColourMatch>
+		<ColourMatch for="__next">#33a02c</ColourMatch>
+		<ColourMatch for="__next">#fb9a99</ColourMatch>
+		<ColourMatch for="__next">#e31a1c</ColourMatch>
+		<ColourMatch for="__next">#fdbf6f</ColourMatch>
+		<ColourMatch for="__next">#ff7f00</ColourMatch>
+	</ColourScheme>
+	<ColourScheme id="categoricScheme8">
+		<ColourMatch for="__next">#7fc97f</ColourMatch>
+		<ColourMatch for="__next">#beaed4</ColourMatch>
+		<ColourMatch for="__next">#fdc086</ColourMatch>
+		<ColourMatch for="__next">#ffff99</ColourMatch>
+		<ColourMatch for="__next">#386cb0</ColourMatch>
+		<ColourMatch for="__next">#f0027f</ColourMatch>
+		<ColourMatch for="__next">#bf5b17</ColourMatch>
+		<ColourMatch for="__next">#666666</ColourMatch>
+	</ColourScheme>
+</MapPalettes>
+<SubstitutionVariables>
+	<Variable description="The name of the base geography for map" id="baseGeographyName" />
+	<Variable description="The name of the first current theme" id="themeName" />
+	<Variable description="The name of the first current indicator" id="indicatorName" />
+	<Variable description="The name of the first current indicator&apos;s date (if it has one)" id="date" />
+	<Variable description="The name of the filter" id="filterName" />
+	<Variable description="The value of the filter" id="filterValue" />
+	<Variable description="The type of legend" id="legendType" />
+</SubstitutionVariables>
+<Component classes="Panel windowTitleText ScrollBar timeSeriesPanel timeSeries timeSeriesYAxis timeSeriesXAxis timeSeriesGridLines chartAxisTitles DataTip chartDataUnavailableText" editable="true" height="170" icon="$IAICON/48x48/line-chart.png" id="timeSeries" moveable="true" name="Time Series Chart" removeable="true" resizeable="true" visible="true" width="400" x="333" y="415">
+	<Description>The time series component of the report.</Description>
+	<Property description="Show title bar" id="showTitleBar" name="Show Title Bar?" type="boolean" value="false" />
+	<Property description="The title of the chart" id="title" name="Title" type="string" value="Time Series Chart" />
+	<Property description="If being used as a pop up window is it visible at start up? Use &apos;toggleTimeSeries&apos; to toggle visibility." id="popUpVisible" name="PopUp Window Visible?" type="boolean" value="false" />
+	<Property description="Is the chart a pop up window? Use &apos;toggleTimeSeries&apos; to toggle visibility." id="popUp" name="PopUp Window?" type="boolean" value="false" />
+	<Property description="The data for the y-axis" id="yAxisData" name="Y-Axis Data" type="string" value="value" />
+	<Property description="The label for the x-axis" id="xAxisLabel" name="X-Axis Label" type="string" value="" />
+	<Property description="The label for the y-axis" id="yAxisLabel" name="Y-Axis Label" type="string" value="" />
+	<Property description="Should the comparison data be displayed if available?" id="showComparison" name="Show Comparison Data" type="boolean" value="false" />
+	<Property description="Should the chart data be constrained to the current data range, or always start at zero?" id="constrainWithinDataRange" name="Match Y Axis to Data?" type="boolean" value="true" />
+	<Property description="The maximum number of time series that can be displayed at any one time" id="maxNoSeries" name="Max No Series" type="integer" value="10" />
+</Component>
+<Text anchor="start" editable="true" fill="#000000" font-family="Arial" font-size="12.0" font-style="normal" font-weight="normal" id="___user_extra_39" moveable="true" removeable="true" resizeable="true" rotate="0" target="_self" wrap-width="-1" x="50" y="50">${filterValue}</Text>
+<Text anchor="start" editable="true" fill="#006699" font-family="Futura Md BT" font-size="36.0" font-style="normal" font-weight="normal" id="___user_extra_40" moveable="true" removeable="true" resizeable="true" rotate="0" target="_self" wrap-width="-1" x="10" y="7">EIU&apos;S GLOBAL DEMOCRACY INDEX</Text>
+<Image anchor="left" css-class="Application" editable="true" height="75" id="___user_extra_41" moveable="true" removeable="true" rescale="true" resizeable="true" src="./___user_extra_41.jpg" target="_self" width="75" x="656" y="11" />
+</AtlasInterface>
