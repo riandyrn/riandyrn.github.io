@@ -271,8 +271,8 @@
 	<Property description="The text for &apos;high&apos;" id="CS_HIGH" name="High Text" type="string" value="High" />
 	<Property description="The text for &apos;low&apos;" id="CS_LOW" name="Low Text" type="string" value="Low" />
 </PropertyGroup>
-<Text anchor="start" editable="true" fill="#6699FF" font-family="HelveticaNeueLT Com 25 UltLt" font-size="18.0" font-style="normal" font-weight="bold" id="titleText" moveable="true" removeable="true" resizeable="true" rotate="0" wrap-width="500" x="11" y="43">${date}</Text>
-<Button editable="true" height="19" href="script:toggleDataExplorer" id="dataButton" moveable="true" removeable="true" resizeable="true" text="Year" tooltip="Click to choose a year" width="70" x="572" y="70" />
+<Text anchor="start" editable="true" fill="#6699FF" font-family="Futura Bk BT" font-size="18.0" font-style="normal" font-weight="bold" id="titleText" moveable="true" removeable="true" resizeable="true" rotate="0" wrap-width="500" x="11" y="40">${date}</Text>
+<Button editable="true" height="16" href="script:toggleDataExplorer" id="dataButton" moveable="true" removeable="true" resizeable="true" text="Year" tooltip="Click to toggle the data menu" width="70" x="573" y="70" />
 <MapPalettes classes="4" default="Sequential Blue" maxclasses="10">
 	<ColourRange id="Sequential Blue">
 		<Colour>#ccccff</Colour>
@@ -487,6 +487,6 @@
 	<Property description="The maximum number of time series that can be displayed at any one time" id="maxNoSeries" name="Max No Series" type="integer" value="10" />
 </Component>
 <Text anchor="start" editable="true" fill="#000000" font-family="Arial" font-size="12.0" font-style="normal" font-weight="normal" id="___user_extra_39" moveable="true" removeable="true" resizeable="true" rotate="0" target="_self" wrap-width="-1" x="50" y="50">${filterValue}</Text>
-<Text anchor="start" editable="true" fill="#006699" font-family="Futura Md BT" font-size="36.0" font-style="normal" font-weight="normal" id="___user_extra_40" moveable="true" removeable="true" resizeable="true" rotate="0" target="_self" wrap-width="-1" x="10" y="5">EIU&apos;S GLOBAL DEMOCRACY INDEX</Text>
-<Image anchor="left" css-class="Application" editable="true" height="75" id="___user_extra_41" moveable="true" removeable="true" rescale="true" resizeable="true" src="./___user_extra_41.jpg" target="_self" width="75" x="656" y="11" />
+<Text anchor="start" editable="true" fill="#006699" font-family="Futura Md BT" font-size="30.0" font-style="normal" font-weight="normal" id="___user_extra_40" moveable="true" removeable="true" resizeable="true" rotate="0" target="_self" wrap-width="-1" x="10" y="7">EIU&apos;S GLOBAL DEMOCRACY INDEX</Text>
+<Image anchor="left" css-class="Application" editable="true" height="75" id="___user_extra_41" moveable="true" removeable="true" rescale="true" resizeable="true" src="./___user_extra_41.jpg" target="_self" width="75" x="731" y="11" />
 </AtlasInterface>

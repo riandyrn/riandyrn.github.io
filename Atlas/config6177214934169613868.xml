@@ -8,15 +8,15 @@
 	<Property description="Is the explorer a pop up window? Use &apos;toggleGeogExplorer&apos; to toggle visibility." id="popUp" name="PopUp Window?" type="boolean" value="true" />
 	<Property description="Should the explorer close after a selection?" id="closeOnSelection" name="Close On Selection?" type="boolean" value="true" />
 </Component>
-<Component classes="Panel windowTitleText ScrollBar dataExplorerPanel Tree popUpWindow" editable="true" height="192" icon="$IAICON/48x48/text_code.png" id="dataExplorer" moveable="true" name="Data Explorer" removeable="true" resizeable="true" visible="true" width="159" x="573" y="98">
+<Component classes="Panel windowTitleText ScrollBar dataExplorerPanel Tree popUpWindow" editable="true" height="300" icon="$IAICON/48x48/text_code.png" id="dataExplorer" moveable="true" name="Data Explorer" removeable="true" resizeable="true" visible="true" width="300" x="10" y="70">
 	<Description>The data explorer component of the report.</Description>
 	<Property description="Show title bar" id="showTitleBar" name="Show Title Bar?" type="boolean" value="false" />
 	<Property description="The title of the data explorer" id="title" name="Title" type="string" value="Data Explorer" />
 	<Property description="If being used as a pop up window is it visible at start up? Use &apos;toggleDataExplorer&apos; to toggle visibility." id="popUpVisible" name="PopUp Window Visible?" type="boolean" value="false" />
 	<Property description="Is the explorer a pop up window? Use &apos;toggleDataExplorer&apos; to toggle visibility." id="popUp" name="PopUp Window?" type="boolean" value="true" />
 	<Property description="Should the explorer close after a selection?" id="closeOnSelection" name="Close On Selection?" type="boolean" value="true" />
-	<Property description="Should the explorer data be expanded?" id="expandData" name="Expand Data?" type="boolean" value="true" />
-	<Property description="Should the explorer include dates? Set reverseDates to true to use latest date" id="includeDates" name="Include Dates?" type="boolean" value="true" />
+	<Property description="Should the explorer data be expanded?" id="expandData" name="Expand Data?" type="boolean" value="false" />
+	<Property description="Should the explorer include dates? Set reverseDates to true to use latest date" id="includeDates" name="Include Dates?" type="boolean" value="false" />
 	<Property description="Should the explorer display dates in reverse order?" id="reverseDates" name="Reverse Date Order?" type="boolean" value="true" />
 </Component>
 <Component classes="Panel windowTitleText ScrollBar filterExplorerPanel Tree popUpWindow" editable="true" height="300" icon="$IAICON/48x48/text_code.png" id="filterExplorer" moveable="true" name="Filter Explorer" removeable="true" resizeable="true" visible="true" width="300" x="85" y="70">
@@ -29,7 +29,7 @@
 	<Property description="Should the explorer data be expanded?" id="expandData" name="Expand Data?" type="boolean" value="false" />
 	<Property description="Should the map attempt to zoom to a contextual area matching the filter?" id="zoomToFilter" name="Zoom To Filter?" type="boolean" value="true" />
 </Component>
-<Component classes="Panel windowTitleText ScrollBar mapPanel map mapText mapControl MapTip toolMenu baseLayer contextualLayer1 contextualLayer2 contextualLayer3 contextualLayer4 contextualLayer5 contextualLayer6 contextualLayer7 contextualLayer8 contextualLayer9 contextualLayer10" editable="true" height="335" icon="$IAICON/48x48/document_earth.png" id="map" moveable="true" name="Map" removeable="true" resizeable="true" visible="true" width="552" x="10" y="70">
+<Component classes="Panel windowTitleText ScrollBar mapPanel map mapText mapControl MapTip toolMenu baseLayer contextualLayer1 contextualLayer2 contextualLayer3 contextualLayer4 contextualLayer5 contextualLayer6 contextualLayer7 contextualLayer8 contextualLayer9 contextualLayer10" editable="true" height="335" icon="$IAICON/48x48/document_earth.png" id="map" moveable="true" name="Map" removeable="true" resizeable="true" visible="true" width="540" x="10" y="70">
 	<Description>The map component of the report.</Description>
 	<Property description="Show title bar" id="showTitleBar" name="Show Title Bar?" type="boolean" value="false" />
 	<Property description="The title of the map" id="title" name="Title" type="string" value="Map" />
@@ -56,7 +56,7 @@
 	<Property description="Which contextual layers should be displayed in the legend?" id="displayLayers" name="Contextual Layers Displayed In Legend" type="string-array" value="" />
 	<Property description="The data tip" id="tip" name="Tip" type="string" value="&lt;p&gt;${featureName}: ${indicatorValue}&lt;/p&gt;" />
 </Component>
-<Component classes="Panel windowTitleText ScrollBar pieChartPanel" editable="true" height="158" icon="$IAICON/48x48/pie-chart.png" id="pieChart" moveable="true" name="Pie Chart" removeable="true" resizeable="true" visible="true" width="160" x="573" y="247">
+<Component classes="Panel windowTitleText ScrollBar pieChartPanel" editable="true" height="170" icon="$IAICON/48x48/pie-chart.png" id="pieChart" moveable="true" name="Pie Chart" removeable="true" resizeable="true" visible="true" width="164" x="231" y="414">
 	<Description>The pie chart component of the report.</Description>
 	<Property description="Show title bar" id="showTitleBar" name="Show Title Bar?" type="boolean" value="false" />
 	<Property description="The title of the chart" id="title" name="Title" type="string" value="Pie Chart" />
@@ -66,7 +66,7 @@
 	<Property description="Is the chart highlightable?" id="highlight" name="Chart Highlight" type="boolean" value="true" />
 	<Property description="The time for the chart data change animation (in seconds), set to 0 for no animation" id="animationDuration" name="Animation Duration (seconds)" type="float" value="0.5" />
 </Component>
-<Table classes="Panel windowTitleText ScrollBar tablePanel table tableColumnHeaders" editable="true" height="170" icon="$IAICON/48x48/table_sql.png" id="table" moveable="true" name="Table" removeable="true" resizeable="true" visible="true" width="310" x="10" y="415">
+<Table classes="Panel windowTitleText ScrollBar tablePanel table tableColumnHeaders" editable="true" height="335" icon="$IAICON/48x48/table_sql.png" id="table" moveable="true" name="Table" removeable="true" resizeable="true" visible="true" width="230" x="560" y="69">
 	<Description>The table component of the report.</Description>
 	<Property description="Show title bar" id="showTitleBar" name="Show Title Bar?" type="boolean" value="false" />
 	<Property description="The title of the table" id="title" name="Title" type="string" value="Table" />
@@ -79,10 +79,11 @@
 	<Property description="The height of each cell or row in the table" id="cellHeight" name="Cell Height" type="integer" value="20" />
 	<Property description="Should the table show legend colours in the rows" id="showRowColours" name="Show Row Colours?" type="boolean" value="false" />
 	<Column alias="" name="legendColour" width="0.0" />
+	<Column alias="" name="zoomto" width="0.0" />
 	<Column alias="Name" name="name" width="0.5" />
-	<Column alias="Democracy Index" name="value" width="0.5" />
+	<Column alias="Indicator" name="value" width="0.5" />
 </Table>
-<Component classes="Panel windowTitleText ScrollBar legendPanel legend legendLabels" editable="true" height="137" icon="$IAICON/48x48/form_blue.png" id="legend" moveable="true" name="Legend" removeable="true" resizeable="true" visible="true" width="160" x="573" y="97">
+<Component classes="Panel windowTitleText ScrollBar legendPanel legend legendLabels" editable="true" height="170" icon="$IAICON/48x48/form_blue.png" id="legend" moveable="true" name="Legend" removeable="true" resizeable="true" visible="true" width="213" x="10" y="414">
 	<Description>The legend that shows the user information about the classification used by the components.</Description>
 	<Property description="Show title bar" id="showTitleBar" name="Show Title Bar?" type="boolean" value="false" />
 	<Property description="The title of the legend" id="title" name="Title" type="string" value="Legend" />
@@ -271,11 +272,11 @@
 	<Property description="The text for &apos;high&apos;" id="CS_HIGH" name="High Text" type="string" value="High" />
 	<Property description="The text for &apos;low&apos;" id="CS_LOW" name="Low Text" type="string" value="Low" />
 </PropertyGroup>
-<Text anchor="start" editable="true" fill="#6699FF" font-family="HelveticaNeueLT Com 25 UltLt" font-size="18.0" font-style="normal" font-weight="bold" id="titleText" moveable="true" removeable="true" resizeable="true" rotate="0" wrap-width="500" x="11" y="43">${date}</Text>
-<Button editable="true" height="19" href="script:toggleDataExplorer" id="dataButton" moveable="true" removeable="true" resizeable="true" text="Year" tooltip="Click to choose a year" width="70" x="572" y="70" />
-<MapPalettes classes="4" default="Sequential Blue" maxclasses="10">
+<Text anchor="start" css-class="superTitleText" editable="true" id="titleText" moveable="true" removeable="true" resizeable="true" rotate="0" wrap-width="500" x="10" y="5">${themeName(&apos; &gt;&gt; &apos;)} &gt;&gt; ${indicatorName} ${notEmpty(date, &apos;&gt;&gt; &apos;)} ${date} ${notEmpty(filterName, &apos;&gt;&gt; Filter: &apos;)} ${filterName} ${notEmpty(filterValue, &apos;&gt;&gt; &apos;)} ${filterValue}</Text>
+<Button editable="true" height="13" href="script:toggleDataExplorer" id="dataButton" moveable="true" removeable="true" resizeable="true" text="Data" tooltip="Click to toggle the data menu" width="70" x="10" y="50" />
+<MapPalettes classes="5" default="Sequential Blue" maxclasses="10">
 	<ColourRange id="Sequential Blue">
-		<Colour>#ccccff</Colour>
+		<Colour>#ece7f2</Colour>
 		<Colour>#74a9cf</Colour>
 		<Colour>#023858</Colour>
 	</ColourRange>
@@ -344,7 +345,7 @@
 	<ColourRange id="Diverging Blue to Red (Rich)">
 		<Colour>#ca0020</Colour>
 		<Colour>#f4a582</Colour>
-		<Colour>#eef1f2</Colour>
+		<Colour>#EEF1F2</Colour>
 		<Colour>#92c5de</Colour>
 		<Colour>#0571b0</Colour>
 	</ColourRange>
@@ -473,20 +474,4 @@
 	<Variable description="The value of the filter" id="filterValue" />
 	<Variable description="The type of legend" id="legendType" />
 </SubstitutionVariables>
-<Component classes="Panel windowTitleText ScrollBar timeSeriesPanel timeSeries timeSeriesYAxis timeSeriesXAxis timeSeriesGridLines chartAxisTitles DataTip chartDataUnavailableText" editable="true" height="170" icon="$IAICON/48x48/line-chart.png" id="timeSeries" moveable="true" name="Time Series Chart" removeable="true" resizeable="true" visible="true" width="400" x="333" y="415">
-	<Description>The time series component of the report.</Description>
-	<Property description="Show title bar" id="showTitleBar" name="Show Title Bar?" type="boolean" value="false" />
-	<Property description="The title of the chart" id="title" name="Title" type="string" value="Time Series Chart" />
-	<Property description="If being used as a pop up window is it visible at start up? Use &apos;toggleTimeSeries&apos; to toggle visibility." id="popUpVisible" name="PopUp Window Visible?" type="boolean" value="false" />
-	<Property description="Is the chart a pop up window? Use &apos;toggleTimeSeries&apos; to toggle visibility." id="popUp" name="PopUp Window?" type="boolean" value="false" />
-	<Property description="The data for the y-axis" id="yAxisData" name="Y-Axis Data" type="string" value="value" />
-	<Property description="The label for the x-axis" id="xAxisLabel" name="X-Axis Label" type="string" value="" />
-	<Property description="The label for the y-axis" id="yAxisLabel" name="Y-Axis Label" type="string" value="" />
-	<Property description="Should the comparison data be displayed if available?" id="showComparison" name="Show Comparison Data" type="boolean" value="false" />
-	<Property description="Should the chart data be constrained to the current data range, or always start at zero?" id="constrainWithinDataRange" name="Match Y Axis to Data?" type="boolean" value="true" />
-	<Property description="The maximum number of time series that can be displayed at any one time" id="maxNoSeries" name="Max No Series" type="integer" value="10" />
-</Component>
-<Text anchor="start" editable="true" fill="#000000" font-family="Arial" font-size="12.0" font-style="normal" font-weight="normal" id="___user_extra_39" moveable="true" removeable="true" resizeable="true" rotate="0" target="_self" wrap-width="-1" x="50" y="50">${filterValue}</Text>
-<Text anchor="start" editable="true" fill="#006699" font-family="Futura Md BT" font-size="36.0" font-style="normal" font-weight="normal" id="___user_extra_40" moveable="true" removeable="true" resizeable="true" rotate="0" target="_self" wrap-width="-1" x="10" y="5">EIU&apos;S GLOBAL DEMOCRACY INDEX</Text>
-<Image anchor="left" css-class="Application" editable="true" height="75" id="___user_extra_41" moveable="true" removeable="true" rescale="true" resizeable="true" src="./___user_extra_41.jpg" target="_self" width="75" x="656" y="11" />
 </AtlasInterface>

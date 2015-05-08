@@ -8,9 +8,9 @@ Application {
 	/**             Background and theme colour ie. button, checkbox etc. highlight colour.             */ 
 }
 .backgroundRect {
-	borderColor: #ffffff; 
+	borderColor: #73c1e6; 
 	cornerRadius: 5; 
-	backgroundColor: #ffffff; 
+	backgroundColor: #eff8fd; 
 	backgroundAlpha: 1; 
 	dropShadowEnabled: false; 
 	dropShadowColor: #2e7799; 
@@ -669,10 +669,10 @@ Tree {
 	textRollOverColor: #f69305; 
 	color: #2e7799; 
 	borderThickness: 2; 
-	fillColors: #ffffff,#ffffff; 
+	fillColors: #eff8fd,#cdeeff; 
 	fontStyle: normal; 
 	fillAlphas: 1, 1; 
-	fontFamily: "HelveticaNeueLT Com 45 Lt"; 
+	fontFamily: Verdana; 
 	fontSize: 10; 
 	/**             Standard buttons.             */ 
 }
