@@ -91,7 +91,7 @@ function getDividerTemplate() {
 
 function getLinkPath(link) {
 
-	return baseUrl + "/" + link;
+	return link;
 }
 
 function setTitle(title) {
