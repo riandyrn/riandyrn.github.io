@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Haraj Image Optimization Comparison</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/twentytwenty.css">
+</head>
+<body>
+    
+    <div class="container">
+        
+        <div class="row">
+              
+            <div class="col-md-12">
+                <div class="image-container twentytwenty-container">
+                    <img src="assets/img/input/900x675-1_-589792dd5eb6e.jpg" alt="">
+                    <img src="assets/img/output/900x675-1_-589792dd5eb6e.jpg" alt="">
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="assets/js/jquery.event.move.js"></script>
+    <script src="assets/js/jquery.twentytwenty.js"></script>
+    <script>
+        
+        $(window).load(function() {
+          $(".image-container").twentytwenty();
+        });
+    </script>
+</body>
+</html>
