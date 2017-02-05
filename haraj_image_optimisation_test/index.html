@@ -4,33 +4,73 @@
     <meta charset="UTF-8">
     <title>Haraj Image Optimization Comparison</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/twentytwenty.css">
+    <style>
+        
+        body {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        
+        .after-image {
+            margin-top: 8px;
+        }
+        
+        .caption {
+            font-size: small;
+        }
+        
+    </style>
 </head>
 <body>
     
-    <div class="container">
-        
-        <div class="row">
-              
-            <div class="col-md-12">
-                <div class="image-container twentytwenty-container">
-                    <img src="assets/img/input/900x675-1_-589792dd5eb6e.jpg" alt="">
-                    <img src="assets/img/output/900x675-1_-589792dd5eb6e.jpg" alt="">
-                </div>
-            </div>
-            
-        </div>
-        
-    </div>
+    <div class="container"></div>
     
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-    <script src="assets/js/jquery.event.move.js"></script>
-    <script src="assets/js/jquery.twentytwenty.js"></script>
+    <script src="assets/js/jquery-1.12.4.min.js"></script>
     <script>
         
-        $(window).load(function() {
-          $(".image-container").twentytwenty();
-        });
+        var data = [
+            
+            { file: "900x675-1_-589792dd5eb6e.jpg", beforeSize: 169, afterSize: 58 },
+            { file: "900x709-1_-5897929d9bb37.jpg", beforeSize: 218, afterSize: 80 },
+            { file: "900x797-1_-5897942449d22.jpg", beforeSize: 157, afterSize: 52 },
+            { file: "900x846-1_-58979422c8820.jpg", beforeSize: 170, afterSize: 57 },
+            { file: "900x855-1_-589792cf61db4.jpg", beforeSize: 114, afterSize: 28 },
+            { file: "900x900-1_-589792a677992.jpg", beforeSize: 182, afterSize: 63 },
+            { file: "900x900-1_-589792c7f1e30.jpeg", beforeSize: 210, afterSize: 75 },
+            { file: "900x900-1_-589792ce25ced.jpg", beforeSize: 183, afterSize: 64 },
+            { file: "900x900-1_-589793ac69cba.jpg", beforeSize: 159, afterSize: 54 },
+            { file: "900x900-1_-5897929122ff7.jpg", beforeSize: 289, afterSize: 96 }
+        ];
+        
+        /*
+            <div class="row">
+
+                <div class="col-xs-12 text-center">
+
+                    <h4>900x675-1_-589792dd5eb6e.jpg</h4>
+                    <p class="caption">169KB -> 58KB</p>
+                    <img src="assets/img/input/900x675-1_-589792dd5eb6e.jpg" class="col-xs-12" alt="">
+                    <img src="assets/img/output/900x675-1_-589792dd5eb6e.jpg" class="col-xs-12 after-image" alt="">
+
+                </div>
+
+            </div>
+
+            <hr>
+        */
+        
+        for(var i = 0; i < data.length; i++) {
+            
+            var row = data[i];
+            
+            var html = '<div class="row"> <div class="col-xs-12 text-center"> <h4>' + row.file + '</h4> <p class="caption">' + row.beforeSize + 'KB -> ' + row.afterSize + 'KB</p> <img src="assets/img/input/' + row.file + '" class="col-xs-12" alt=""> <img src="assets/img/output/' + row.file + '" class="col-xs-12 after-image" alt=""> </div> </div>';
+            
+            if(i < data.length - 1)
+                html += "<hr>";
+            
+            $('.container').append(html);
+        }
+        
     </script>
 </body>
 </html>
