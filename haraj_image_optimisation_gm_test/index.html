@@ -41,17 +41,18 @@
             { file: "900x900-1_-589793ac69cba.jpg", beforeSize: 159, afterSize: 89 },
             { file: "900x900-1_-5897929122ff7.jpg", beforeSize: 289, afterSize: 166 },
             
-            { file: "900x1018-1_-5897a296d5afd.png", beforeSize: 95, afterSize: 55 },
-            { file: "900x1119-1_-5897a415a26dd.png", beforeSize: 150, afterSize: 88 },
-            { file: "900x1132-1_-58979cdd3066b.png", beforeSize: 162, afterSize: 88 },
-            { file: "900x1146-1_-58979cde5c00d.png", beforeSize: 173, afterSize: 98 },
-            { file: "900x1157-1_-58979cdbb7035.png", beforeSize: 148, afterSize: 75 },
-            { file: "900x1158-1_-58979cdbd1a50.png", beforeSize: 159, afterSize: 88 },
-            { file: "900x1159-1_-58979cdbc2f4a.png", beforeSize: 157, afterSize: 86 },
-            { file: "900x1169-1_-58979cdba202d.png", beforeSize: 127, afterSize: 67 },
-            { file: "900x1181-1_-58979cdd4af9e.png", beforeSize: 172, afterSize: 96 },
-            { file: "900x1600-1_-5897978f67a46.png", beforeSize: 230, afterSize: 131 },
+            { file: "png_test_1.png", beforeSize: 177, afterSize: 143 },
+            { file: "png_test_2.png", beforeSize: 163, afterSize: 72 },
+            { file: "png_test_3.png", beforeSize: 168, afterSize: 39 },
+            { file: "png_test_4.png", beforeSize: 105, afterSize: 88 },
+            { file: "png_test_5.png", beforeSize: 931, afterSize: 367 },
+            { file: "png_test_6.png", beforeSize: 618, afterSize: 292 },
+            { file: "png_test_7.png", beforeSize: 180, afterSize: 177 },
+            { file: "png_test_8.png", beforeSize: 939, afterSize: 177 },
+            { file: "png_test_9.png", beforeSize: 73, afterSize: 55 },
+            { file: "png_test_10.png", beforeSize: 41, afterSize: 36 },
             
+            /*
             { file: "128x128-1_-587110af61d40.gif", beforeSize: 6, afterSize: 4 },
             { file: "139x184-1_-5881e5278883d.gif", beforeSize: 10, afterSize: 6 },
             { file: "170x800-1_-5897333205593.gif", beforeSize: 48, afterSize: 28 },
@@ -62,6 +63,7 @@
             { file: "500b67048599b.gif", beforeSize: 234, afterSize: 124 },
             { file: "900x100-1_-5896f4dd42d2c.gif", beforeSize: 38, afterSize: 23 },
             { file: "5049eb9ea1e6f.gif", beforeSize: 64, afterSize: 52 }
+            */
         ];
         
         /*
@@ -85,7 +87,7 @@
             
             var row = data[i];
             
-            var html = '<div class="row"> <div class="col-xs-12 text-center"> <h4>' + row.file + '</h4> <p class="caption"><b>input:</b> ' + row.beforeSize + 'KB -> <b>normal:</b> ' + row.afterSize + 'KB</p> <img src="assets/img/input/' + row.file + '" class="col-xs-12" alt=""><img src="assets/img/output/' + row.file + '" class="col-xs-12 after-image" alt=""> </div> </div>';
+            var html = '<div class="row"> <div class="col-xs-12 text-center"> <h4>' + row.file + '</h4> <p class="caption"><b>input:</b> ' + row.beforeSize + 'KB -> <b>output:</b> ' + row.afterSize + 'KB</p> <img src="assets/img/input/' + row.file + '" class="col-xs-12" alt=""><img src="assets/img/output/' + row.file + '" class="col-xs-12 after-image" alt=""> </div> </div>';
             
             if(i < data.length - 1)
                 html += "<hr>";
