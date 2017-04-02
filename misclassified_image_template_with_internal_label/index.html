@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Misclassified Images</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <style>
+        
+        body {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        
+        .classifier-label {
+            
+            margin: 20px 0;
+        }
+        
+        .img-el {
+            margin-bottom: 15px;    
+        }
+        
+        .img-el > img {
+            padding-bottom: 5px;
+        }
+        
+        .internal-label {
+            font-weight: 600;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <div class="container"></div>
+    
+    <script src="assets/js/jquery-1.12.4.min.js"></script>
+    <script>
+        
+        /*
+        <div class="row">
+            
+            <h3 class="text-center classifier-label">misclassified as [gov exist]</h3>
+            <div class="img-container text-center">
+                
+                <div class="img-el col-md-3">
+                    <h6>900x675-1_-589792dd5eb6e.jpg</h6>
+                    <img src="assets/img/input/900x675-1_-589792dd5eb6e.jpg" class="col-md-12"/>
+                    <small class="internal-label">other</small>
+                    <small>confidence score: 0.923232</small>
+                </div>
+                
+                <div class="img-el col-md-3">
+                    <h6>900x675-1_-589792dd5eb6e.jpg</h6>
+                    <img src="assets/img/input/900x675-1_-589792dd5eb6e.jpg" class="col-md-12"/>
+                    <small class="internal-label">other</small>
+                    <small>confidence score: 0.923232</small>
+                </div>
+                
+                <div class="img-el col-md-3">
+                    <h6>900x675-1_-589792dd5eb6e.jpg</h6>
+                    <img src="assets/img/input/900x675-1_-589792dd5eb6e.jpg" class="col-md-12"/>
+                    <small class="internal-label">other</small>
+                    <small>confidence score: 0.923232</small>
+                </div>
+                
+                <div class="img-el col-md-3">
+                    <h6>900x675-1_-589792dd5eb6e.jpg</h6>
+                    <img src="assets/img/input/900x675-1_-589792dd5eb6e.jpg" class="col-md-12"/>
+                    <small class="internal-label">other</small>
+                    <small>confidence score: 0.923232</small>
+                </div>
+                
+                <div class="img-el col-md-3">
+                    <h6>900x675-1_-589792dd5eb6e.jpg</h6>
+                    <img src="assets/img/input/900x675-1_-589792dd5eb6e.jpg" class="col-md-12"/>
+                    <small class="internal-label">other</small>
+                    <small>confidence score: 0.923232</small>
+                </div>
+                <div class="img-el col-md-3">
+                    <h6>900x675-1_-589792dd5eb6e.jpgaaaaaaaQW...</h6>
+                    <img src="assets/img/input/900x675-1_-589792dd5eb6e.jpg" class="col-md-12"/>
+                    <small class="internal-label">other</small>
+                    <small>confidence score: 0.923232</small>
+                </div>
+                <div class="img-el col-md-3">
+                    <h6>900x675-1_-589792dd5eb6e.jpg</h6>
+                    <img src="assets/img/input/900x675-1_-589792dd5eb6e.jpg" class="col-md-12"/>
+                    <small class="internal-label">other</small>
+                    <small>confidence score: 0.923232</small>
+                </div>
+                <div class="img-el col-md-3">
+                    <h6>900x675-1_-589792dd5eb6e.jpg</h6>
+                    <img src="assets/img/input/900x675-1_-589792dd5eb6e.jpg" class="col-md-12"/>
+                    <small class="internal-label">other</small>
+                    <small>confidence score: 0.923232</small>
+                </div>
+                
+            </div>
+            
+        </div>
+        */
+        
+        var data = JSON.parse(JSON.stringify([
+            
+            {label: 'gov exist', images: [{path: 'assets/img/input/900x675-1_-589792dd5eb6e.jpg', internal_label: 'yuhu', score: 0.923232}, {path: 'assets/img/input/900x900-1_-5897929122ff7.jpg', internal_label: 'drone', score: 0.95}]}, 
+            {label: 'gov not exist', images: [{path: 'assets/img/input/900x797-1_-5897942449d22.jpg', internal_label: 'something', score: 0.923232}, {path: 'assets/img/input/900x900-1_-589793ac69cba.jpg', internal_label: 'something', score: 0.8976}]}
+        ]));
+        
+        for(var i = 0; i < data.length; i++) {
+            
+            var row = data[i],
+                label = row.label,
+                images = row.images;
+            
+            var el = $('<div class="row"><h3 class="text-center classifier-label">misclassified as [' + label + ']</h3><div class="img-container text-center col-md-12"></div></div><br/>');
+            var image_container = el.find('.img-container');
+            
+            for(var j = 0; j < images.length; j++) {
+                
+                var filename = images[j].path.split('/').pop();
+                if(filename.length > 40)
+                    filename = filename.substr(0, 37) + '...';
+                
+                var path = images[j].path;
+                var score = (images[j].score + '').substr(0, 8);
+                var internal_label = images[j].internal_label;
+                
+                var html = '<div class="img-el col-md-3"><h6>' + filename + '</h6><img src="' + path + '" class="col-md-12"/><small class="internal-label">' + internal_label + '</small><br/><small>confidence score: ' + score + '</small></div>';
+                image_container.append(html);
+            }
+            
+            $('.container').append(el);
+        }
+        
+    </script>
+</body>
+</html>
