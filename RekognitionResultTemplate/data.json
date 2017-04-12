@@ -1,0 +1,37 @@
+{
+  "dir_path": "/Users/riandyrn/coba_download_s3/non_violate_image",
+  "images": [
+    {
+      "path": "/Users/riandyrn/coba_download_s3/non_violate_image/450x800-1_-58e778331138a.jpg",
+      "rekognition_result": "{ \"Labels\": [ { \"Confidence\": 94.30461120605469, \"Name\": \"Brochure\" }, { \"Confidence\": 94.30461120605469, \"Name\": \"Flyer\" }, { \"Confidence\": 94.30461120605469, \"Name\": \"Poster\" }, { \"Confidence\": 89.54283142089844, \"Name\": \"Art\" }, { \"Confidence\": 89.54283142089844, \"Name\": \"Graphic Design\" }, { \"Confidence\": 50.525211334228516, \"Name\": \"Greeting Card\" }, { \"Confidence\": 50.525211334228516, \"Name\": \"Mail\" } ], \"OrientationCorrection\": \"ROTATE_0\" }"
+    },
+    {
+      "path": "/Users/riandyrn/coba_download_s3/non_violate_image/581x1032-1_-58e8b396e0c33.jpg",
+      "rekognition_result": "{ \"Labels\": [ { \"Confidence\": 94.30461120605469, \"Name\": \"Brochure\" }, { \"Confidence\": 94.30461120605469, \"Name\": \"Flyer\" }, { \"Confidence\": 94.30461120605469, \"Name\": \"Poster\" }, { \"Confidence\": 89.54283142089844, \"Name\": \"Art\" }, { \"Confidence\": 89.54283142089844, \"Name\": \"Graphic Design\" }, { \"Confidence\": 50.525211334228516, \"Name\": \"Greeting Card\" }, { \"Confidence\": 50.525211334228516, \"Name\": \"Mail\" } ], \"OrientationCorrection\": \"ROTATE_0\" }"
+    },
+    {
+      "path": "/Users/riandyrn/coba_download_s3/non_violate_image/450x800-1_-58e778331138a.jpg",
+      "rekognition_result": "{ \"Labels\": [ { \"Confidence\": 94.30461120605469, \"Name\": \"Brochure\" }, { \"Confidence\": 94.30461120605469, \"Name\": \"Flyer\" }, { \"Confidence\": 94.30461120605469, \"Name\": \"Poster\" }, { \"Confidence\": 89.54283142089844, \"Name\": \"Art\" }, { \"Confidence\": 89.54283142089844, \"Name\": \"Graphic Design\" }, { \"Confidence\": 50.525211334228516, \"Name\": \"Greeting Card\" }, { \"Confidence\": 50.525211334228516, \"Name\": \"Mail\" } ], \"OrientationCorrection\": \"ROTATE_0\" }"
+    },
+    {
+      "path": "/Users/riandyrn/coba_download_s3/non_violate_image/450x800-1_-58e778331138a.jpg",
+      "rekognition_result": "{ \"Labels\": [ { \"Confidence\": 94.30461120605469, \"Name\": \"Brochure\" }, { \"Confidence\": 94.30461120605469, \"Name\": \"Flyer\" }, { \"Confidence\": 94.30461120605469, \"Name\": \"Poster\" }, { \"Confidence\": 89.54283142089844, \"Name\": \"Art\" }, { \"Confidence\": 89.54283142089844, \"Name\": \"Graphic Design\" }, { \"Confidence\": 50.525211334228516, \"Name\": \"Greeting Card\" }, { \"Confidence\": 50.525211334228516, \"Name\": \"Mail\" } ], \"OrientationCorrection\": \"ROTATE_0\" }"
+    },
+    {
+      "path": "/Users/riandyrn/coba_download_s3/non_violate_image/450x800-1_-58e778331138a.jpg",
+      "rekognition_result": "{ \"Labels\": [ { \"Confidence\": 94.30461120605469, \"Name\": \"Brochure\" }, { \"Confidence\": 94.30461120605469, \"Name\": \"Flyer\" }, { \"Confidence\": 94.30461120605469, \"Name\": \"Poster\" }, { \"Confidence\": 89.54283142089844, \"Name\": \"Art\" }, { \"Confidence\": 89.54283142089844, \"Name\": \"Graphic Design\" }, { \"Confidence\": 50.525211334228516, \"Name\": \"Greeting Card\" }, { \"Confidence\": 50.525211334228516, \"Name\": \"Mail\" } ], \"OrientationCorrection\": \"ROTATE_0\" }"
+    },
+    {
+      "path": "/Users/riandyrn/coba_download_s3/non_violate_image/900x998-1_-58e6c78de797f.jpg",
+      "rekognition_result": "{ \"Labels\": [ { \"Confidence\": 94.30461120605469, \"Name\": \"Brochure\" }, { \"Confidence\": 94.30461120605469, \"Name\": \"Flyer\" }, { \"Confidence\": 94.30461120605469, \"Name\": \"Poster\" }, { \"Confidence\": 89.54283142089844, \"Name\": \"Art\" }, { \"Confidence\": 89.54283142089844, \"Name\": \"Graphic Design\" }, { \"Confidence\": 50.525211334228516, \"Name\": \"Greeting Card\" }, { \"Confidence\": 50.525211334228516, \"Name\": \"Mail\" } ], \"OrientationCorrection\": \"ROTATE_0\" }"
+    },
+    {
+      "path": "/Users/riandyrn/coba_download_s3/non_violate_image/450x800-1_-58e778331138a.jpg",
+      "rekognition_result": "{ \"Labels\": [ { \"Confidence\": 94.30461120605469, \"Name\": \"Brochure\" }, { \"Confidence\": 94.30461120605469, \"Name\": \"Flyer\" }, { \"Confidence\": 94.30461120605469, \"Name\": \"Poster\" }, { \"Confidence\": 89.54283142089844, \"Name\": \"Art\" }, { \"Confidence\": 89.54283142089844, \"Name\": \"Graphic Design\" }, { \"Confidence\": 50.525211334228516, \"Name\": \"Greeting Card\" }, { \"Confidence\": 50.525211334228516, \"Name\": \"Mail\" } ], \"OrientationCorrection\": \"ROTATE_0\" }"
+    },
+    {
+      "path": "/Users/riandyrn/coba_download_s3/non_violate_image/450x800-1_-58e778331138a.jpg",
+      "rekognition_result": "{ \"Labels\": [ { \"Confidence\": 94.30461120605469, \"Name\": \"Brochure\" }, { \"Confidence\": 94.30461120605469, \"Name\": \"Flyer\" }, { \"Confidence\": 94.30461120605469, \"Name\": \"Poster\" }, { \"Confidence\": 89.54283142089844, \"Name\": \"Art\" }, { \"Confidence\": 89.54283142089844, \"Name\": \"Graphic Design\" }, { \"Confidence\": 50.525211334228516, \"Name\": \"Greeting Card\" }, { \"Confidence\": 50.525211334228516, \"Name\": \"Mail\" } ], \"OrientationCorrection\": \"ROTATE_0\" }"
+    }
+  ]
+}

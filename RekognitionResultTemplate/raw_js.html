@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RekognitionResultTemplate</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    
+    <style>
+        
+        body {
+            padding-top: 20px;
+            padding-bottom: 60px;
+        }
+        
+        .el-image > ul {
+            
+            list-style-type: square;
+        }
+        
+        .el-image > .title {
+            
+            padding-bottom: 5px;
+        }
+        
+        .el-image > .title > small {
+            
+            display: block;
+            margin-top: 6px;
+        }
+        
+        .el-image > .img-thumbnail {
+            
+            padding: 10px;
+        }
+        
+        .row-images {
+            
+            margin-top: 40px;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <div class="container-fluid"></div>
+       
+    <script src="assets/js/jquery-1.12.4.min.js"></script>
+    <script>
+        
+        var data = 
+        {    
+            dir_path: "/Users/riandyrn/coba_download_s3/non_violate_image",
+            images: 
+            [
+                {
+                    path: '/Users/riandyrn/coba_download_s3/non_violate_image/450x800-1_-58e778331138a.jpg', 
+                    rekognition_result: '{ "Labels": [ { "Confidence": 94.30461120605469, "Name": "Brochure" }, { "Confidence": 94.30461120605469, "Name": "Flyer" }, { "Confidence": 94.30461120605469, "Name": "Poster" }, { "Confidence": 89.54283142089844, "Name": "Art" }, { "Confidence": 89.54283142089844, "Name": "Graphic Design" }, { "Confidence": 50.525211334228516, "Name": "Greeting Card" }, { "Confidence": 50.525211334228516, "Name": "Mail" } ], "OrientationCorrection": "ROTATE_0" }',
+                    is_violating_image: true
+                },
+                {
+                    path: '/Users/riandyrn/coba_download_s3/non_violate_image/581x1032-1_-58e8b396e0c33.jpg', 
+                    rekognition_result: '{ "Labels": [ { "Confidence": 94.30461120605469, "Name": "Brochure" }, { "Confidence": 94.30461120605469, "Name": "Flyer" }, { "Confidence": 94.30461120605469, "Name": "Poster" }, { "Confidence": 89.54283142089844, "Name": "Art" }, { "Confidence": 89.54283142089844, "Name": "Graphic Design" }, { "Confidence": 50.525211334228516, "Name": "Greeting Card" }, { "Confidence": 50.525211334228516, "Name": "Mail" } ], "OrientationCorrection": "ROTATE_0" }',
+                    is_violating_image: true
+                },
+                {
+                    path: '/Users/riandyrn/coba_download_s3/non_violate_image/450x800-1_-58e778331138a.jpg', 
+                    rekognition_result: '{ "Labels": [ { "Confidence": 94.30461120605469, "Name": "Brochure" }, { "Confidence": 94.30461120605469, "Name": "Flyer" }, { "Confidence": 94.30461120605469, "Name": "Poster" }, { "Confidence": 89.54283142089844, "Name": "Art" }, { "Confidence": 89.54283142089844, "Name": "Graphic Design" }, { "Confidence": 50.525211334228516, "Name": "Greeting Card" }, { "Confidence": 50.525211334228516, "Name": "Mail" } ], "OrientationCorrection": "ROTATE_0" }',
+                    is_violating_image: true
+                },
+                {
+                    path: '/Users/riandyrn/coba_download_s3/non_violate_image/450x800-1_-58e778331138a.jpg', 
+                    rekognition_result: '{ "Labels": [ { "Confidence": 94.30461120605469, "Name": "Brochure" }, { "Confidence": 94.30461120605469, "Name": "Flyer" }, { "Confidence": 94.30461120605469, "Name": "Poster" }, { "Confidence": 89.54283142089844, "Name": "Art" }, { "Confidence": 89.54283142089844, "Name": "Graphic Design" }, { "Confidence": 50.525211334228516, "Name": "Greeting Card" }, { "Confidence": 50.525211334228516, "Name": "Mail" } ], "OrientationCorrection": "ROTATE_0" }',
+                    is_violating_image: true
+                },
+                {
+                    path: '/Users/riandyrn/coba_download_s3/non_violate_image/450x800-1_-58e778331138a.jpg', 
+                    rekognition_result: '{ "Labels": [ { "Confidence": 94.30461120605469, "Name": "Brochure" }, { "Confidence": 94.30461120605469, "Name": "Flyer" }, { "Confidence": 94.30461120605469, "Name": "Poster" }, { "Confidence": 89.54283142089844, "Name": "Art" }, { "Confidence": 89.54283142089844, "Name": "Graphic Design" }, { "Confidence": 50.525211334228516, "Name": "Greeting Card" }, { "Confidence": 50.525211334228516, "Name": "Mail" } ], "OrientationCorrection": "ROTATE_0" }',
+                    is_violating_image: true
+                },
+                {
+                    path: '/Users/riandyrn/coba_download_s3/non_violate_image/900x998-1_-58e6c78de797f.jpg', 
+                    rekognition_result: '{ "Labels": [ { "Confidence": 94.30461120605469, "Name": "Brochure" }, { "Confidence": 94.30461120605469, "Name": "Flyer" }, { "Confidence": 94.30461120605469, "Name": "Poster" }, { "Confidence": 89.54283142089844, "Name": "Art" }, { "Confidence": 89.54283142089844, "Name": "Graphic Design" }, { "Confidence": 50.525211334228516, "Name": "Greeting Card" }, { "Confidence": 50.525211334228516, "Name": "Mail" } ], "OrientationCorrection": "ROTATE_0" }',
+                    is_violating_image: false
+                },
+                {
+                    path: '/Users/riandyrn/coba_download_s3/non_violate_image/450x800-1_-58e778331138a.jpg', 
+                    rekognition_result: '{ "Labels": [ { "Confidence": 94.30461120605469, "Name": "Brochure" }, { "Confidence": 94.30461120605469, "Name": "Flyer" }, { "Confidence": 94.30461120605469, "Name": "Poster" }, { "Confidence": 89.54283142089844, "Name": "Art" }, { "Confidence": 89.54283142089844, "Name": "Graphic Design" }, { "Confidence": 50.525211334228516, "Name": "Greeting Card" }, { "Confidence": 50.525211334228516, "Name": "Mail" } ], "OrientationCorrection": "ROTATE_0" }',
+                    is_violating_image: false
+                },
+                {
+                    path: '/Users/riandyrn/coba_download_s3/non_violate_image/450x800-1_-58e778331138a.jpg', 
+                    rekognition_result: '{ "Labels": [ { "Confidence": 94.30461120605469, "Name": "Brochure" }, { "Confidence": 94.30461120605469, "Name": "Flyer" }, { "Confidence": 94.30461120605469, "Name": "Poster" }, { "Confidence": 89.54283142089844, "Name": "Art" }, { "Confidence": 89.54283142089844, "Name": "Graphic Design" }, { "Confidence": 50.525211334228516, "Name": "Greeting Card" }, { "Confidence": 50.525211334228516, "Name": "Mail" } ], "OrientationCorrection": "ROTATE_0" }',
+                    is_violating_image: true
+                },
+            ]
+        };
+        
+        var NUM_IMAGES_PER_ROW = 4;
+        var container_dom = $('.container-fluid');
+        
+        // append title
+        container_dom.append('<h2 class="text-center">' + data['dir_path'] + '</h2>');
+        
+        // append elements
+        for(var i = 0; i < Math.ceil(data['images'].length / NUM_IMAGES_PER_ROW); i++) {
+            
+            // create row_dom
+            var row_dom = $('<div class="row row-images"></div>');
+            
+            // append images to row_dom
+            for(var j = 0; j < NUM_IMAGES_PER_ROW; j++) {
+                
+                var img_obj = data['images'][i * NUM_IMAGES_PER_ROW + j];
+                if(img_obj) {
+                    
+                    var path = img_obj['path'];
+                    var rekognition_result = JSON.parse(img_obj['rekognition_result']);
+                    var is_violating_image = img_obj['is_violating_image'];
+
+                    var filename = path.split('/').pop();
+                    var labels = rekognition_result['Labels'];
+
+                    var el_image_dom = $('<div class="el-image col-md-3"> <h5 class="title text-center">' + filename + ' <br> <small>' + (is_violating_image ? 'violating image': 'non-violating image') + '</small></h5> <div class="row"><img src="' + path + '" alt="" class="col-md-6"> <ul class="col-md-6"></ul></div> </div>');    
+                    var ul_dom = el_image_dom.find('ul');
+
+                    // append labels
+                    for(var k = 0; k < labels.length; k++) {
+
+                        var label = labels[k];
+                        var label_name = label['Name'];
+                        var confidence_score = (label['Confidence'] + '').substr(0, 6);
+
+                        ul_dom.append('<li><b>' + label_name + ':</b> ' + confidence_score + '</li>');
+                    }
+
+                    // append to row_dom
+                    row_dom.append(el_image_dom);
+                }
+            }
+            
+            // append row_dom to container_dom
+            container_dom.append(row_dom);
+        }
+
+    </script>
+</body>
+</html>
