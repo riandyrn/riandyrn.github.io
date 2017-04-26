@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RekognitionResultTemplate</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    
+    <style>
+        
+        body {
+            padding-top: 20px;
+            padding-bottom: 60px;
+        }
+        
+        .el-image > ul {
+            
+            list-style-type: square;
+        }
+        
+        .el-image > .title {
+            
+            padding-bottom: 5px;
+        }
+        
+        .el-image > .title > small {
+            
+            display: block;
+            margin-top: 7px;
+        }
+        
+        .el-image > .title > small > .recognized-label {
+            
+            display: block;
+            margin-top: 4px;
+        }
+        
+        .el-image > .img-thumbnail {
+            
+            padding: 10px;
+        }
+        
+        .row-images {
+            
+            margin-top: 40px;
+        }
+        
+        h2.text-center small {
+            
+            display: block;
+            margin-top: 12px;
+        }
+        
+        .label-list > ul {
+            
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .label-list > small {
+            
+            display: block;
+            margin-bottom: 5px;
+            text-decoration: underline;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <div class="container-fluid">
+        <h2 class="text-center">/Users/riandyrn/coba_download_s3/non_violate_image<br> <small>total images: 309000<br><small>violating rate: <b>0.29%</b> =&gt; 904, non-violating rate: <b>99.71%</b> =&gt; 308096</small></small>
+        </h2>
+        <div class="row row-images">
+            <div class="el-image col-md-3">
+                <h5 class="title text-center">450x800-1_-58e778331138a.jpg <br> <small>1 - violating image<br><span class="recognized-label">Image is recognized as Brochure</span></small></h5>
+                <div class="row">
+                    <img src="/Users/riandyrn/coba_download_s3/non_violate_image/581x1032-1_-58e8b396e0c33.jpg" alt="" class="col-md-8 col-md-offset-2">
+                </div>
+                <br>
+                <div class="row text-center">
+                    <div class="col-md-6 label-list aws-rekognition">
+                        <small>AWS Rekognition</small>
+                        <ul></ul>
+                    </div>
+                    <div class="col-md-6 label-list google-vision-api">
+                        <small>Google Vision API</small>
+                        <ul></ul>
+                    </div>
+                </div>
+            </div>
+            <div class="el-image col-md-3">
+                <h5 class="title text-center">450x800-1_-58e778331138a.jpg <br> <small>1 - violating image<br><span class="recognized-label">Image is recognized as Brochure</span></small></h5>
+                <div class="row">
+                    <img src="/Users/riandyrn/coba_download_s3/subset_clean_dataset/900x900-1_-aE1eta0COTeRc8.jpg" alt="" class="col-md-8 col-md-offset-2">
+                </div>
+                <br>
+                <div class="row text-center">
+                    <div class="col-md-6 label-list aws-rekognition">
+                        <small>AWS Rekognition</small>
+                        <ul>
+                            <li><b>Brochure:</b> 94.304</li>
+                            <li><b>Flyer:</b> 94.304</li>
+                            <li><b>Poster:</b> 94.304</li>
+                            <li><b>Art:</b> 89.542</li>
+                            <li><b>Graphic Design:</b> 89.542</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 label-list google-vision-api">
+                        <small>Google Vision API</small>
+                        <ul>
+                            <li><b>Brochure:</b> 94.304</li>
+                            <li><b>Flyer:</b> 94.304</li>
+                            <li><b>Poster:</b> 94.304</li>
+                            <li><b>Art:</b> 89.542</li>
+                            <li><b>Graphic Design:</b> 89.542</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="el-image col-md-3">
+                <h5 class="title text-center">450x800-1_-58e778331138a.jpg <br> <small>1 - violating image<br><span class="recognized-label">Image is recognized as Brochure</span></small></h5>
+                <div class="row">
+                    <img src="/Users/riandyrn/coba_download_s3/subset_clean_dataset/607x1080-1_-58fb0bde0a57a.JPG" alt="" class="col-md-8 col-md-offset-2">
+                </div>
+                <br>
+                <div class="row text-center">
+                    <div class="col-md-6 label-list aws-rekognition">
+                        <small>AWS Rekognition</small>
+                        <ul>
+                            <li><b>Brochure:</b> 94.304</li>
+                            <li><b>Flyer:</b> 94.304</li>
+                            <li><b>Poster:</b> 94.304</li>
+                            <li><b>Art:</b> 89.542</li>
+                            <li><b>Graphic Design:</b> 89.542</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 label-list google-vision-api">
+                        <small>Google Vision API</small>
+                        <ul>
+                            <li><b>Brochure:</b> 94.304</li>
+                            <li><b>Flyer:</b> 94.304</li>
+                            <li><b>Poster:</b> 94.304</li>
+                            <li><b>Art:</b> 89.542</li>
+                            <li><b>Graphic Design:</b> 89.542</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="el-image col-md-3">
+                <h5 class="title text-center">450x800-1_-58e778331138a.jpg <br> <small>1 - violating image<br><span class="recognized-label">Image is recognized as Brochure</span></small></h5>
+                <div class="row">
+                    <img src="/Users/riandyrn/coba_download_s3/subset_clean_dataset/900x900-1_-5DAXUC00aJ3123.jpg" alt="" class="col-md-8 col-md-offset-2">
+                </div>
+                <br>
+                <div class="row text-center">
+                    <div class="col-md-6 label-list aws-rekognition">
+                        <small>AWS Rekognition</small>
+                        <ul>
+                            <li><b>Brochure:</b> 94.304</li>
+                            <li><b>Flyer:</b> 94.304</li>
+                            <li><b>Poster:</b> 94.304</li>
+                            <li><b>Art:</b> 89.542</li>
+                            <li><b>Graphic Design:</b> 89.542</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 label-list google-vision-api">
+                        <small>Google Vision API</small>
+                        <ul>
+                            <li><b>Brochure:</b> 94.304</li>
+                            <li><b>Flyer:</b> 94.304</li>
+                            <li><b>Poster:</b> 94.304</li>
+                            <li><b>Art:</b> 89.542</li>
+                            <li><b>Graphic Design:</b> 89.542</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row row-images">
+            <div class="el-image col-md-3">
+                <h5 class="title text-center">450x800-1_-58e778331138a.jpg <br> <small>1 - violating image<br><span class="recognized-label">Image is recognized as Brochure</span></small></h5>
+                <div class="row">
+                    <img src="/Users/riandyrn/coba_download_s3/subset_clean_dataset/900x674-1_-58fb066e0dbff.jpg" alt="" class="col-md-8 col-md-offset-2">
+                </div>
+                <br>
+                <div class="row text-center">
+                    <div class="col-md-6 label-list aws-rekognition">
+                        <small>AWS Rekognition</small>
+                        <ul>
+                            <li><b>Brochure:</b> 94.304</li>
+                            <li><b>Flyer:</b> 94.304</li>
+                            <li><b>Poster:</b> 94.304</li>
+                            <li><b>Art:</b> 89.542</li>
+                            <li><b>Graphic Design:</b> 89.542</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 label-list google-vision-api">
+                        <small>Google Vision API</small>
+                        <ul>
+                            <li><b>Brochure:</b> 94.304</li>
+                            <li><b>Flyer:</b> 94.304</li>
+                            <li><b>Poster:</b> 94.304</li>
+                            <li><b>Art:</b> 89.542</li>
+                            <li><b>Graphic Design:</b> 89.542</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

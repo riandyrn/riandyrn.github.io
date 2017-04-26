@@ -25,7 +25,13 @@
         .el-image > .title > small {
             
             display: block;
-            margin-top: 6px;
+            margin-top: 7px;
+        }
+        
+        .el-image > .title > small > .recognized-label {
+            
+            display: block;
+            margin-top: 4px;
         }
         
         .el-image > .img-thumbnail {
@@ -38,6 +44,12 @@
             margin-top: 40px;
         }
         
+        h2.text-center small {
+            
+            display: block;
+            margin-top: 12px;
+        }
+        
     </style>
 </head>
 <body>
@@ -47,12 +59,18 @@
     <script src="assets/js/jquery-1.12.4.min.js"></script>
     <script>
         
-        var data = JSON.parse('{"dir_path": "", "images": []}');
+        var data = {dir_path: "", images: [], total_images: 0, num_violating_images: 0};
         
         var NUM_IMAGES_PER_ROW = 4;
         var container_dom = $('.container-fluid');
         
-        container_dom.append('<h2 class="text-center">' + data['dir_path'] + '</h2>');
+        var total_images = data['total_images'],
+            violating_images = data['num_violating_images'],
+            non_violating_images = total_images - violating_images,
+            violating_rate = (violating_images * 100 / data['total_images']).toFixed(2),
+            non_violating_rate = (non_violating_images * 100 / data['total_images']).toFixed(2);
+           
+        container_dom.append('<h2 class="text-center">' + data['dir_path'] + '<br> <small>total images: ' + total_images + '<br><small>violating rate: <b>' + violating_rate + '%</b> =&gt; ' + violating_images + ', non-violating rate: <b>' + non_violating_rate + '%</b> =&gt; ' + non_violating_images + '</small></small></h2>');
         
         for(var i = 0; i < Math.ceil(data['images'].length / NUM_IMAGES_PER_ROW); i++) {
             
@@ -64,13 +82,13 @@
                 if(img_obj) {
                     
                     var path = img_obj['path'];
-                    var rekognition_result = JSON.parse(img_obj['rekognition_result']);
+                    var labels = JSON.parse(img_obj['rekognition_result']);
                     var is_violating_image = img_obj['is_violating_image'];
+                    var recognized_label = img_obj['recognized_label'];
 
                     var filename = path.split('/').pop();
-                    var labels = rekognition_result['Labels'];
 
-                    var el_image_dom = $('<div class="el-image col-md-3"> <h5 class="title text-center">' + filename + ' <br> <small>' + (is_violating_image ? 'violating image': 'non-violating image') + '</small></h5> <div class="row"><img src="' + path + '" alt="" class="col-md-6"> <ul class="col-md-6"></ul></div> </div>');    
+                    var el_image_dom = $('<div class="el-image col-md-3"> <h5 class="title text-center">' + filename + ' <br> <small>' + (is_violating_image ? '1 - violating image': '0 - non-violating image') + '<br><span class="recognized-label">' + (recognized_label ? 'Image is recognized as ' + recognized_label : 'Cannot recognized image') + '</span></small></h5> <div class="row"><img src="' + path + '" alt="" class="col-md-6"> <ul class="col-md-6"></ul></div> </div>');    
                     var ul_dom = el_image_dom.find('ul');
 
                     for(var k = 0; k < labels.length; k++) {

@@ -13,7 +13,8 @@
         }
         
         .el-image > ul {
-            list-style-type: none;
+            
+            list-style-type: square;
         }
         
         .el-image > .title {
@@ -21,175 +22,115 @@
             padding-bottom: 5px;
         }
         
+        .el-image > .title > small {
+            
+            display: block;
+            margin-top: 7px;
+        }
+        
+        .el-image > .title > small > .recognized-label {
+            
+            display: block;
+            margin-top: 4px;
+        }
+        
+        .el-image > .img-thumbnail {
+            
+            padding: 10px;
+        }
+        
         .row-images {
             
             margin-top: 40px;
+        }
+        
+        h2.text-center small {
+            
+            display: block;
+            margin-top: 12px;
         }
         
     </style>
 </head>
 <body>
     
-    <div class="container">
-        
-        <h2 class="text-center">/Users/riandyrn/coba_download_s3/non_violate_image</h2>
-        
+    <div class="container-fluid">
+        <h2 class="text-center">/Users/riandyrn/coba_download_s3/non_violate_image<br> <small>total images: 309000<br><small>violating rate: <b>0.29%</b> =&gt; 904, non-violating rate: <b>99.71%</b> =&gt; 308096</small></small>
+        </h2>
         <div class="row row-images">
-                
-            <div class="el-image col-md-4">
-                <h5 class="title text-center">570x737-1_-58e8f657eb788.jpg</h5>
-                <img src="../../coba_download_s3/violate_image/570x737-1_-58e8f657eb788.jpg" alt="" class=col-md-6>
-                <ul class="col-md-6">
-                    <li><b>Brochure:</b> 94.30</li>
-                    <li><b>Flyer:</b> 94.30</li>
-                    <li><b>Poster:</b> 94.30</li>
-                    <li><b>Art:</b> 89.54</li>
-                    <li><b>Graphic Design:</b> 89.54</li>
-                    <li><b>Greeting Card:</b> 50.52</li>
-                    <li><b>Mail:</b> 50.52</li>
-                    <li><b>Brochure:</b> 94.30</li>
-                    <li><b>Flyer:</b> 94.30</li>
-                    <li><b>Poster:</b> 94.30</li>
-                </ul>
+            <div class="el-image col-md-3">
+                <h5 class="title text-center">450x800-1_-58e778331138a.jpg <br> <small>1 - violating image<br><span class="recognized-label">Image is recognized as Brochure</span></small></h5>
+                <div class="row"><img src="/Users/riandyrn/coba_download_s3/non_violate_image/581x1032-1_-58e8b396e0c33.jpg" alt="" class="col-md-6">
+                    <ul class="col-md-4">
+                        <li><b>Brochure:</b> 94.304</li>
+                        <li><b>Flyer:</b> 94.304</li>
+                        <li><b>Poster:</b> 94.304</li>
+                        <li><b>Art:</b> 89.542</li>
+                        <li><b>Graphic Design:</b> 89.542</li>
+                        <li><b>Greeting Card:</b> 50.525</li>
+                        <li><b>Mail:</b> 50.525</li>
+                    </ul>
+                </div>
             </div>
-            
-            <!--
-            <div class="el-image col-md-4">
-                <h5 class="title text-center"></h5>
-                <img src="" alt="" class=col-md-6>
-                <ul class="col-md-6"></ul>
+            <div class="el-image col-md-3">
+                <h5 class="title text-center">581x1032-1_-58e8b396e0c33.jpg <br> <small>1 - violating image<br><span class="recognized-label">Image is recognized as Brochure</span></small></h5>
+                <div class="row"><img src="/Users/riandyrn/coba_download_s3/non_violate_image/581x1032-1_-58e8b396e0c33.jpg" alt="" class="col-md-6">
+                    <ul class="col-md-6">
+                        <li><b>Brochure:</b> 94.304</li>
+                        <li><b>Flyer:</b> 94.304</li>
+                        <li><b>Poster:</b> 94.304</li>
+                        <li><b>Art:</b> 89.542</li>
+                        <li><b>Graphic Design:</b> 89.542</li>
+                        <li><b>Greeting Card:</b> 50.525</li>
+                        <li><b>Mail:</b> 50.525</li>
+                    </ul>
+                </div>
             </div>
-            -->
-
-            <div class="el-image col-md-4">
-                <h5 class="title text-center">581x1032-1_-58e8b396e0c33.jpg</h5>
-                <img src="../../coba_download_s3/non_violate_image/581x1032-1_-58e8b396e0c33.jpg" alt="" class=col-md-6>
-                <ul class="col-md-6">
-                    <li><b>Brochure:</b> 94.30</li>
-                    <li><b>Flyer:</b> 94.30</li>
-                    <li><b>Poster:</b> 94.30</li>
-                    <li><b>Art:</b> 89.54</li>
-                    <li><b>Graphic Design:</b> 89.54</li>
-                    <li><b>Greeting Card:</b> 50.52</li>
-                    <li><b>Mail:</b> 50.52</li>
-                </ul>
+            <div class="el-image col-md-3">
+                <h5 class="title text-center">450x800-1_-58e778331138a.jpg <br> <small>1 - violating image<br><span class="recognized-label">Image is recognized as Brochure</span></small></h5>
+                <div class="row"><img src="/Users/riandyrn/coba_download_s3/non_violate_image/581x1032-1_-58e8b396e0c33.jpg" alt="" class="col-md-6">
+                    <ul class="col-md-6">
+                        <li><b>Brochure:</b> 94.304</li>
+                        <li><b>Flyer:</b> 94.304</li>
+                        <li><b>Poster:</b> 94.304</li>
+                        <li><b>Art:</b> 89.542</li>
+                        <li><b>Graphic Design:</b> 89.542</li>
+                        <li><b>Greeting Card:</b> 50.525</li>
+                        <li><b>Mail:</b> 50.525</li>
+                    </ul>
+                </div>
             </div>
-            
-            <div class="el-image col-md-4">
-                <h5 class="title text-center">450x800-1_-58e778331138a.jpg</h5>
-                <img src="../../coba_download_s3/non_violate_image/450x800-1_-58e778331138a.jpg" alt="" class=col-md-6>
-                <ul class="col-md-6">
-                    <li><b>Brochure:</b> 94.30</li>
-                    <li><b>Flyer:</b> 94.30</li>
-                    <li><b>Poster:</b> 94.30</li>
-                    <li><b>Art:</b> 89.54</li>
-                    <li><b>Graphic Design:</b> 89.54</li>
-                    <li><b>Greeting Card:</b> 50.52</li>
-                    <li><b>Mail:</b> 50.52</li>
-                </ul>
+            <div class="el-image col-md-3">
+                <h5 class="title text-center">450x800-1_-58e778331138a.jpg <br> <small>1 - violating image<br><span class="recognized-label">Image is recognized as Brochure</span></small></h5>
+                <div class="row"><img src="/Users/riandyrn/coba_download_s3/non_violate_image/581x1032-1_-58e8b396e0c33.jpg" alt="" class="col-md-6">
+                    <ul class="col-md-6">
+                        <li><b>Brochure:</b> 94.304</li>
+                        <li><b>Flyer:</b> 94.304</li>
+                        <li><b>Poster:</b> 94.304</li>
+                        <li><b>Art:</b> 89.542</li>
+                        <li><b>Graphic Design:</b> 89.542</li>
+                        <li><b>Greeting Card:</b> 50.525</li>
+                        <li><b>Mail:</b> 50.525</li>
+                    </ul>
+                </div>
             </div>
-            
         </div>
-        
         <div class="row row-images">
-                
-            <div class="el-image col-md-4">
-                <h5 class="title text-center">570x737-1_-58e8f657eb788.jpg</h5>
-                <img src="../../coba_download_s3/violate_image/570x737-1_-58e8f657eb788.jpg" alt="" class=col-md-6>
-                <ul class="col-md-6">
-                    <li><b>Brochure:</b> 94.30</li>
-                    <li><b>Flyer:</b> 94.30</li>
-                    <li><b>Poster:</b> 94.30</li>
-                    <li><b>Art:</b> 89.54</li>
-                    <li><b>Graphic Design:</b> 89.54</li>
-                    <li><b>Greeting Card:</b> 50.52</li>
-                    <li><b>Mail:</b> 50.52</li>
-                    <li><b>Brochure:</b> 94.30</li>
-                    <li><b>Flyer:</b> 94.30</li>
-                    <li><b>Poster:</b> 94.30</li>
-                </ul>
+            <div class="el-image col-md-3">
+                <h5 class="title text-center">450x800-1_-58e778331138a.jpg <br> <small>1 - violating image<br><span class="recognized-label">Image is recognized as Brochure</span></small></h5>
+                <div class="row"><img src="/Users/riandyrn/coba_download_s3/non_violate_image/581x1032-1_-58e8b396e0c33.jpg" alt="" class="col-md-6">
+                    <ul class="col-md-6">
+                        <li><b>Brochure:</b> 94.304</li>
+                        <li><b>Flyer:</b> 94.304</li>
+                        <li><b>Poster:</b> 94.304</li>
+                        <li><b>Art:</b> 89.542</li>
+                        <li><b>Graphic Design:</b> 89.542</li>
+                        <li><b>Greeting Card:</b> 50.525</li>
+                        <li><b>Mail:</b> 50.525</li>
+                    </ul>
+                </div>
             </div>
-
-            <div class="el-image col-md-4">
-                <h5 class="title text-center">581x1032-1_-58e8b396e0c33.jpg</h5>
-                <img src="../../coba_download_s3/non_violate_image/581x1032-1_-58e8b396e0c33.jpg" alt="" class=col-md-6>
-                <ul class="col-md-6">
-                    <li><b>Brochure:</b> 94.30</li>
-                    <li><b>Flyer:</b> 94.30</li>
-                    <li><b>Poster:</b> 94.30</li>
-                    <li><b>Art:</b> 89.54</li>
-                    <li><b>Graphic Design:</b> 89.54</li>
-                    <li><b>Greeting Card:</b> 50.52</li>
-                    <li><b>Mail:</b> 50.52</li>
-                </ul>
-            </div>
-            
-            <div class="el-image col-md-4">
-                <h5 class="title text-center">450x800-1_-58e778331138a.jpg</h5>
-                <img src="../../coba_download_s3/non_violate_image/450x800-1_-58e778331138a.jpg" alt="" class=col-md-6>
-                <ul class="col-md-6">
-                    <li><b>Brochure:</b> 94.30</li>
-                    <li><b>Flyer:</b> 94.30</li>
-                    <li><b>Poster:</b> 94.30</li>
-                    <li><b>Art:</b> 89.54</li>
-                    <li><b>Graphic Design:</b> 89.54</li>
-                    <li><b>Greeting Card:</b> 50.52</li>
-                    <li><b>Mail:</b> 50.52</li>
-                </ul>
-            </div>
-            
         </div>
-        
-        <div class="row row-images">
-                
-            <div class="el-image col-md-4">
-                <h5 class="title text-center">570x737-1_-58e8f657eb788.jpg</h5>
-                <img src="../../coba_download_s3/violate_image/570x737-1_-58e8f657eb788.jpg" alt="" class=col-md-6>
-                <ul class="col-md-6">
-                    <li><b>Brochure:</b> 94.30</li>
-                    <li><b>Flyer:</b> 94.30</li>
-                    <li><b>Poster:</b> 94.30</li>
-                    <li><b>Art:</b> 89.54</li>
-                    <li><b>Graphic Design:</b> 89.54</li>
-                    <li><b>Greeting Card:</b> 50.52</li>
-                    <li><b>Mail:</b> 50.52</li>
-                    <li><b>Brochure:</b> 94.30</li>
-                    <li><b>Flyer:</b> 94.30</li>
-                    <li><b>Poster:</b> 94.30</li>
-                </ul>
-            </div>
-
-            <div class="el-image col-md-4">
-                <h5 class="title text-center">581x1032-1_-58e8b396e0c33.jpg</h5>
-                <img src="../../coba_download_s3/non_violate_image/581x1032-1_-58e8b396e0c33.jpg" alt="" class=col-md-6>
-                <ul class="col-md-6">
-                    <li><b>Brochure:</b> 94.30</li>
-                    <li><b>Flyer:</b> 94.30</li>
-                    <li><b>Poster:</b> 94.30</li>
-                    <li><b>Art:</b> 89.54</li>
-                    <li><b>Graphic Design:</b> 89.54</li>
-                    <li><b>Greeting Card:</b> 50.52</li>
-                    <li><b>Mail:</b> 50.52</li>
-                </ul>
-            </div>
-            
-            <div class="el-image col-md-4">
-                <h5 class="title text-center">450x800-1_-58e778331138a.jpg</h5>
-                <img src="../../coba_download_s3/non_violate_image/450x800-1_-58e778331138a.jpg" alt="" class=col-md-6>
-                <ul class="col-md-6">
-                    <li><b>Brochure:</b> 94.30</li>
-                    <li><b>Flyer:</b> 94.30</li>
-                    <li><b>Poster:</b> 94.30</li>
-                    <li><b>Art:</b> 89.54</li>
-                    <li><b>Graphic Design:</b> 89.54</li>
-                    <li><b>Greeting Card:</b> 50.52</li>
-                    <li><b>Mail:</b> 50.52</li>
-                </ul>
-            </div>
-            
-        </div>
-    
-        <script src="assets/js/jquery-1.12.4.min.js"></script>
     </div>
 </body>
 </html>
