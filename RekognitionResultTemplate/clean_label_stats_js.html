@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Label Stats</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    
+    <style>
+        
+        body {
+            padding-top: 20px;
+            padding-bottom: 60px;
+        }
+        
+        h2.text-center small {  
+            display: block;
+            margin-top: 12px;
+        }
+    
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        
+        <div class="row">
+            
+            <div class="col-md-12">
+                <h2 class="text-center"><span id="path"></span> <br> <small>total images: <span id="total_images">300000</span></small></h2>
+                <br>
+                <table class="table">
+
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Label</th>
+                            <th>Occurence (%)</th>
+                            <th>Avg. Score</th>
+                            <th>Min. Score</th>
+                            <th>Max. Score</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="table_body">
+                        
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+        
+    </div>
+    
+    <script src="assets/js/jquery-1.12.4.min.js"></script>
+    <script>
+        
+        var data = { dir_path: "", images: [], total_images: 0, num_violating_images: 0 };
+        var label_objs = [];
+        var images = data.images;
+        
+        for(var i = 0; i < images.length; i++) {
+            
+            var label_obj = {};
+            
+            var aws_labels = JSON.parse(images[i].rekognition_result);
+            var google_labels = JSON.parse(images[i].google_labels);
+            
+            for(var j = 0; j < aws_labels.length; j++) {
+                
+                var label = aws_labels[j]['Name'].toLowerCase();
+                var score = aws_labels[j]['Confidence'];
+                
+                label_obj[label] = score;
+            }
+            
+            for(var j = 0; j < google_labels.length; j++) {
+                
+                var label = google_labels[j]['description'].toLowerCase();
+                var score = google_labels[j]['score'] * 100;
+                
+                if(label_obj[label]) {
+                    label_obj[label] = Math.max(label_obj[label], score);
+                } else {
+                    label_obj[label] = score;
+                }
+                
+            }
+            
+            label_objs.push(label_obj);
+        }
+        
+        var stats_data = {};
+        for(var i = 0; i < label_objs.length; i++) {
+            
+            var label_obj = label_objs[i];
+            
+            for(key in label_obj) {
+                
+                var score = label_obj[key];
+                if(key in stats_data) {
+                    
+                    var row = stats_data[key];
+                    
+                    row['occurrence']++;
+                    row['sum_score'] += score;
+                    row['min_score'] = Math.min(row['min_score'], score);
+                    row['max_score'] = Math.max(row['max_score'], score);
+                } 
+                else
+                    stats_data[key] = {occurrence: 1, sum_score: score, min_score: score, max_score: score};
+            }
+        }
+        
+        $('#path').text(data.dir_path);
+        $('#total_images').text(data.total_images);
+        
+        var table_body = $('#table_body');
+        var i = 1;
+        var total_data = images.length;
+        var num_decimal_digits = 4;
+        
+        for(key in stats_data) {
+            
+            var row = stats_data[key];
+            
+            var percentage_occurrence = (row['occurrence'] * 100 / total_data).toFixed(2);
+            var average_score = (row['sum_score'] / total_data).toFixed(num_decimal_digits);
+            var min_score = row['min_score'].toFixed(num_decimal_digits);
+            var max_score = row['max_score'].toFixed(num_decimal_digits);
+            
+            table_body.append('<tr> <td>' + i + '.</td> <td>' + key + '</td> <td>' + percentage_occurrence + '%</td> <td>' + average_score + '</td> <td>' + min_score + '</td> <td>' + max_score + '</td> </tr>');
+            
+            i++;
+        }
+        
+    </script>
+</body>
+</html>
