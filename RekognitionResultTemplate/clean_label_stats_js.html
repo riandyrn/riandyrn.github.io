@@ -114,23 +114,32 @@
         $('#path').text(data.dir_path);
         $('#total_images').text(data.total_images);
         
+        stats_arr = [];
+        for(key in stats_data) {
+            
+            var obj = stats_data[key];
+            obj['name'] = key;
+            
+            stats_arr.push(obj);
+        }
+        
+        stats_arr.sort((a, b) => { return b.occurrence - a.occurrence; });
+    
         var table_body = $('#table_body');
-        var i = 1;
         var total_data = images.length;
         var num_decimal_digits = 4;
         
-        for(key in stats_data) {
+        for(var i = 0; i < stats_arr.length; i++) {
             
-            var row = stats_data[key];
+            var row = stats_arr[i];
             
+            var name = row['name'];
             var percentage_occurrence = (row['occurrence'] * 100 / total_data).toFixed(2);
             var average_score = (row['sum_score'] / total_data).toFixed(num_decimal_digits);
             var min_score = row['min_score'].toFixed(num_decimal_digits);
             var max_score = row['max_score'].toFixed(num_decimal_digits);
             
-            table_body.append('<tr> <td>' + i + '.</td> <td>' + key + '</td> <td>' + percentage_occurrence + '%</td> <td>' + average_score + '</td> <td>' + min_score + '</td> <td>' + max_score + '</td> </tr>');
-            
-            i++;
+            table_body.append('<tr> <td>' + (i + 1) + '.</td> <td>' + name + '</td> <td>' + percentage_occurrence + '%</td> <td>' + average_score + '</td> <td>' + min_score + '</td> <td>' + max_score + '</td> </tr>');
         }
         
     </script>
