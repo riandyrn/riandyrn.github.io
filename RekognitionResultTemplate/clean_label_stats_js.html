@@ -36,6 +36,9 @@
                             <th>Label</th>
                             <th>Occurence (%)</th>
                             <th>Avg. Score</th>
+                            <th>Q1. Score</th>
+                            <th>Q2. Score</th>
+                            <th>Q3. Score</th>
                             <th>Min. Score</th>
                             <th>Max. Score</th>
                         </tr>
@@ -57,6 +60,32 @@
         var data = { dir_path: "", images: [], total_images: 0, num_violating_images: 0 };
         var label_objs = [];
         var images = data.images;
+        
+        function get_median(scores) {
+
+            if(scores.length % 2 == 1) {
+                return scores[Math.ceil(scores.length / 2) - 1];
+            } else {
+                half_idx = (scores.length / 2) - 1;
+                return (scores[half_idx] + scores[half_idx + 1]) / 2;
+            }
+        }
+
+        function get_q1(scores) {
+
+            end_idx = Math.floor(scores.length / 2) - 1;
+            sub_scores = scores.slice(0, end_idx + 1);
+
+            return get_median(sub_scores);
+        }
+
+        function get_q3(scores) {
+
+            start_idx = Math.ceil(scores.length / 2);
+            sub_scores = scores.slice(start_idx, scores.length);
+
+            return get_median(sub_scores);
+        }
         
         for(var i = 0; i < images.length; i++) {
             
@@ -100,14 +129,10 @@
                 if(key in stats_data) {
                     
                     var row = stats_data[key];
-                    
-                    row['occurrence']++;
-                    row['sum_score'] += score;
-                    row['min_score'] = Math.min(row['min_score'], score);
-                    row['max_score'] = Math.max(row['max_score'], score);
+                    row['scores'].push(score);
                 } 
                 else
-                    stats_data[key] = {occurrence: 1, sum_score: score, min_score: score, max_score: score};
+                    stats_data[key] = {name: key, scores: [score]};
             }
         }
         
@@ -115,16 +140,11 @@
         $('#total_images').text(data.total_images);
         
         stats_arr = [];
-        for(key in stats_data) {
-            
-            var obj = stats_data[key];
-            obj['name'] = key;
-            
-            stats_arr.push(obj);
-        }
+        for(key in stats_data)
+            stats_arr.push(stats_data[key]);
         
-        stats_arr.sort((a, b) => { return b.occurrence - a.occurrence; });
-    
+        stats_arr.sort((a, b) => { return b.scores.length - a.scores.length; });
+        
         var table_body = $('#table_body');
         var total_data = images.length;
         var num_decimal_digits = 4;
@@ -134,12 +154,21 @@
             var row = stats_arr[i];
             
             var name = row['name'];
-            var percentage_occurrence = (row['occurrence'] * 100 / total_data).toFixed(2);
-            var average_score = (row['sum_score'] / total_data).toFixed(num_decimal_digits);
-            var min_score = row['min_score'].toFixed(num_decimal_digits);
-            var max_score = row['max_score'].toFixed(num_decimal_digits);
+            var scores = row['scores'];
             
-            table_body.append('<tr> <td>' + (i + 1) + '.</td> <td>' + name + '</td> <td>' + percentage_occurrence + '%</td> <td>' + average_score + '</td> <td>' + min_score + '</td> <td>' + max_score + '</td> </tr>');
+            scores.sort((a, b) => { return a - b; });
+            
+            var percentage_occurrence = (scores.length * 100 / total_data).toFixed(2);
+            var average_score = (scores.reduce((acc, val) => { return acc + val; }) / scores.length).toFixed(num_decimal_digits);
+            
+            var min_score = scores[0].toFixed(num_decimal_digits);
+            var max_score = scores[scores.length - 1].toFixed(num_decimal_digits);
+            
+            var med_score = get_median(scores).toFixed(num_decimal_digits);
+            var q1_score = get_q1(scores).toFixed(num_decimal_digits);
+            var q3_score = get_q3(scores).toFixed(num_decimal_digits);
+            
+            table_body.append('<tr> <td>' + (i + 1) + '.</td> <td>' + name + '</td> <td>' + percentage_occurrence + '%</td> <td>' + average_score + '</td> <td>' + q1_score + '</td> <td>' + med_score + '</td> <td>' + q3_score + '</td> <td>' + min_score + '</td> <td>' + max_score + '</td> </tr>');
         }
         
     </script>
