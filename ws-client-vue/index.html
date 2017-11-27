@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Websocket Client</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/vue.js"></script>
+</head>
+<body>
+
+    <div id ="app" class="container">
+        <div class="row">
+
+            <div id="endpoint_page" class="col-md-6 col-md-offset-3" v-show="shouldShowEndpointPage">
+                <h3>Websocket Client</h3>
+                <form action="" id="connect_form" v-on:submit.prevent="submitEndpoint">
+                    <div class="form-group">
+                        <label for="endpoint">Your endpoint:</label>
+                        <input type="text" class="form-control" id="endpoint" v-model="endpoint" ref="endpoint" placeholder="ex. ws://52.30.62.174:6060/v0/channels" required><br>
+                        <button type="submit" class="btn btn-default pull-right">Connect</button>
+                    </div>
+                </form>
+            </div>
+
+            <div id="ops_page" class="col-md-12" v-show="shouldShowOpsPage">
+                <h3 id="connected_endpoint_title">{{ endpoint }}</h3>
+
+                <div id="messages" ref="messages">
+                    <ul>
+                        <li v-for="msg in messages">
+                            <div class="message-box">
+                                <h6 v-bind:class="getUserColor(msg.from)">[{{msg.from}}]</h6>
+                                <pre class="message-content" v-if="msg.isJSON">{{msg.content}}</pre>
+                                <p class="message-content" v-else>{{msg.content}}</p>
+                                <p class="timestamp">{{formatTimestamp(msg.timestamp)}}</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <form action="" id="send_message_form" v-on:submit.prevent="submitMessage">
+                    <div id="chat_control" class="input-group">
+                        <input type="text" placeholder="Enter your message here..." id="message" name="message" v-model="message" ref="message" class="form-control" autocomplete="off" required>
+                        <span class="input-group-btn">
+                            <button type="submit" class="btn btn-primary">Send</button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+    <script src="assets/js/jquery-3.2.1.js"></script>
+    <script src="assets/js/moment.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

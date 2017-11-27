@@ -109,7 +109,7 @@ $(document).ready(() => {
                 reason = 'No status code was actually present';
                 break;
             case 1006:
-                reason = 'Cannot connect to chat server';
+                reason = 'Cannot connect to server';
                 break;
             case 1007:
                 reason = 'The endpoint is terminating the connection because a message was received that contained inconsistent data';
