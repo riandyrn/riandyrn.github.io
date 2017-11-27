@@ -59,10 +59,21 @@ var app = new Vue({
         formatTimestamp(timestamp) {
             return moment(timestamp).format("MMMM DD, YYYY - HH:mm")
         },
-        scrollMessagesToEnd() {
-            // scroll to bottom
-            var container = this.$refs.messages
-            container.scrollTop = container.scrollHeight     
+        applyCurrentPageStateToDOM() {
+            // do necessary DOM cleanup:
+            // - scroll messages to bottom\
+            // - set focus to input
+            // will be called on mounted() & update()
+            if (this.currentPageState === OPS_PAGE_STATE) {
+                // scroll to bottom
+                var container = this.$refs.messages
+                container.scrollTop = container.scrollHeight    
+                // set focus to message input
+                this.$refs.message.focus()
+            } else if (this.currentPageState === ENDPOINT_PAGE_STATE){
+                // set focus to endpoint input
+                this.$refs.endpoint.focus()
+            }
         }
     },
     computed: {
@@ -74,17 +85,10 @@ var app = new Vue({
         }
     },
     mounted() {
-        console.log("clientHeight: " + this.$el.clientHeight)
-        this.$refs.endpoint.focus()
+        this.applyCurrentPageStateToDOM()
     },
     updated() {
-        console.log("clientHeight: " + this.$el.clientHeight)
-        if (this.currentPageState === OPS_PAGE_STATE) {
-            this.scrollMessagesToEnd()
-            this.$refs.message.focus()
-        } else if (this.currentPageState === ENDPOINT_PAGE_STATE){
-            this.$refs.endpoint.focus()
-        }
+        this.applyCurrentPageStateToDOM()
     }
 })
 
