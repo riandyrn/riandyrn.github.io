@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Hello, world!</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+  <body>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+            <a class="navbar-brand" href="#">FatihKidsTV</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Beranda<span class="sr-only">(current)</span></a>
+                    </li>
+                    <!--<li class="nav-item">
+                        <a class="nav-link" href="#">Tentang</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Kontak</a>
+                    </li>-->
+                </ul>
+            </div>
+        </nav>
+          
+        <main role="main" class="container" id="app">
+            <div class="row">
+                <div class="col-md-6 video-container" v-for="videoId in videoIds">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" v-bind:src="getVideoUrl(videoId)" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </main><!-- /.container -->
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="assets/js/jquery-3.2.1.slim.min.js"></script>
+        <script src="assets/js/popper.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/vue.js"></script>
+        <script>
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    videoIds: [
+                        "4KzBLpQ1LmU", 
+                        "ZTPNzYKRvmw",
+                        "ywpHWx-l500", 
+                        "w-OFnyJbSRw", 
+                        "okQggW16h44", 
+                        "knZ9Tj3vAo0"
+                    ]
+                },
+                methods: {
+                    getVideoUrl(videoId){
+                        return `https://www.youtube.com/embed/${videoId}?rel=0`
+                    },
+                    getThumbnailUrl(videoId){}
+                }
+            })
+        </script>
+  </body>
+</html>
