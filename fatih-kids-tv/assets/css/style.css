@@ -12,6 +12,7 @@ body {
 
 .navbar-brand {
     font-size: 1.2em;
+    opacity: 0.8;
 }
 
 .video-container {
@@ -24,4 +25,13 @@ body {
 
 .bg-dark {
     background: #333 !important;
+}
+
+.modal-article-body{
+    font-size: 0.9em;
+}
+
+.main-icon{
+    opacity: 0.9;
+    margin-right: 3px;
 }

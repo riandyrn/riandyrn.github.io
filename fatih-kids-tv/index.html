@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>FatihKidsTV - Tontonan Anak Islami</title>
+    <title>FatihKids.TV - Tontonan Anak Islami</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,11 +9,12 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
   </head>
   <body>
         <div id="app">
             <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-                <a class="navbar-brand" href="#">FatihKidsTV</a>
+                <a class="navbar-brand" href="#"><span class="fa fa-rocket main-icon">&nbsp</span>FatihKids.TV</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -24,7 +25,7 @@
                             <a class="nav-link" href="#">Beranda<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Tentang Kami</a>
+                            <a class="nav-link" href="#" @click.prevent="showAboutUs">Tentang Kami</a>
                         </li>
                     </ul>
                 </div>
@@ -43,16 +44,30 @@
                 <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">{{ currentVideo.title }}</h5>
+                        <h5 class="modal-title">{{ currentVideoTitle }}</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
                         <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" v-bind:src="getVideoURL(currentVideo.id)" allowfullscreen></iframe>
+                            <iframe id="iframe_video" class="embed-responsive-item" src="" allowfullscreen></iframe>
                         </div>
                     </div>
+                </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="modal_about_us" tabindex="-1" role="dialog" aria-labelledby="modal_video_player" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Tentang Kami</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body modal-article-body" v-html="contentAboutUs"></div>
                 </div>
                 </div>
             </div>
@@ -65,10 +80,17 @@
         <script src="assets/js/bootstrap.min.js"></script>
         <script src="assets/js/vue.js"></script>
         <script>
+            window.onpopstate = function(e) {
+                console.log("onpopstate() called")
+            }
+            window.history.pushState = function(e) {
+                console.log("history.pushState() called")
+            }
+            
             var app = new Vue({
                 el: '#app',
                 data: {
-                    currentVideo: {id: '', title: '', by: ''},
+                    currentVideoTitle: '',
                     videos: [
                         {id: "4KzBLpQ1LmU", title: "Yufid Kids - Doa Berbuka Puasa", by: "Yufid.TV"}, 
                         {id: "ZTPNzYKRvmw", title: "Yufid Kids - Doa Bangun Tidur", by: "Yufid.TV"},
@@ -79,29 +101,69 @@
                         {id: "PeBPkYEXVJk", title: "Bincang Ringan Angkringan - Takut Setan?", by: "Yufid.TV"},
                         {id: "AQF_MBQCrNs", title: "Saudaraku - Maen PS, Apa Bisa Jadi Haram?", by: "Yufid.TV"},
                         {id: "0W1WJFZ5SsU", title: `Saudaraku - Budaya "Ngepek"`, by: "Yufid.TV"},
-                    ]
+                    ],
+                    contentAboutUs: `
+                        <p>Assalamu'alaykum, Abi & Ummi!</p>
+                        
+                        <p><span class="font-weight-bold">FatihKids.TV</span> adalah layanan rekomendasi tontonan gratis yang dimaksudkan untuk membantu Abi & Ummi dalam memilihkan tontonan yang baik lagi bermanfaat bagi si buah hati.</p>
+
+                        <p>Seperti yang telah kita sadari bahwa saat ini banyak sekali tontonan-tontonan di luar sana yang tidak bermanfaat bahkan seringkali "merusak" pemikiran anak-anak kita sebagai seorang muslim.</p>
+
+                        <p>Sayangnya saat ini sangat sedikit sekali tontonan-tontonan yang bermanfaat namun menarik bagi anak-anak muslim. Oleh karena itu <span class="font-weight-bold">FatihKids.TV</span> hadir untuk membantu Abi & Ummi dalam menyediakan tontonan berkualitas lagi menarik bagi si buah hati.</p>
+
+                        <p>Namun video-video yang terdapat dalam layanan ini bukanlah milik kami. Kami hanyalah mengumpulkan tautan-tautannya saja lalu menayangkannya pada layanan kami.</p>
+
+                        <p>Apabila Abi & Ummi ingin memberikan masukan baik itu berupa kritik, saran, maupun rekomendasi konten, Abi & Ummi dapat mengirim email kepada kami di <span class="font-weight-bold">fatihkidstv@gmail.com</span></p>
+
+                        <p>Terimakasih banyak sudah mengunjungi layanan kami, Abi & Ummi. Semoga layanan kami dapat memberikan manfaat bagi Abi & Ummi serta si buah hati.</p>
+
+                        <br/>
+                        <p class="text-right">Hormat kami,<br/>Tim Developer FatihKids.TV</p>
+                    `
                 },
                 methods: {
-                    getVideoURL(videoId){
+                    setVideoIFrame(videoId, title){
+                        // it is necessary to replace iframe instead of just replace its
+                        // src property, otherwise when src is changed it will add entry
+                        // to window history.
+                        // 
+                        // I think vue is not good choice for this idea because it doesn't
+                        // meant for having dynamic html insert & replace, thus I use jquery
+                        // to replace iframe which is simpler.
+                        var url = ''
                         if (videoId) { 
-                            return `https://www.youtube.com/embed/${videoId}?rel=0&autoplay=1&showinfo=0`
+                            url = `https://www.youtube.com/embed/${videoId}?rel=0&autoplay=1&showinfo=0`
                         }
-                        return ''
+                        this.currentVideoTitle = title
+                        iframeTemplate = `<iframe id="iframe_video" class="embed-responsive-item" src="${url}" allowfullscreen></iframe>`
+                        $('#iframe_video').replaceWith(iframeTemplate)
                     },
                     getThumbnailURL(videoId){
                         return `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`
                     },
                     playVideo(idx){
-                        this.currentVideo = this.videos[idx]
+                        currentVideo = this.videos[idx]
+                        this.setVideoIFrame(currentVideo.id, currentVideo.title)
                         $('#modal_video_player').modal('show')
+                    },
+                    showAboutUs(){
+                        $('#modal_about_us').modal('show')
                     }
-                }
+                },
             })
 
             // register event for stopping playing video once modal closed
-            // the idea to stop the video is to change the iframe src to empty url
+            // the idea to stop the video is to replace current IFrame into empty one
+            // the reason why we can't just replace the src attribute in IFrame is because 
+            // of default behavior of src changed which will add entry to window history
+            // which in our case is not good
             $('#modal_video_player').on('hide.bs.modal', function(){
-               app.currentVideo = {id: '', title: '', by: ''}
+               app.setVideoIFrame('','')
+            })
+
+            // close navbar nav when modal is shown
+            $('.modal').on('shown.bs.modal', function(){
+                $('#navbarsExampleDefault').removeClass('show')
             })
         </script>
   </body>
