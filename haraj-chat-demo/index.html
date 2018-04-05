@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HarajChat v2.0</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div id="app" class="container-fluid">
+        <div id="signin_page" class="row" v-show="shouldShowLoginPage" v-on:submit.prevent="submitLogin">
+            <div class="col-6 offset-3">
+                <form class="form-signin text-center">
+                    <h2>HarajChat v2.0</h2>
+                    <input type="text" class="form-control" placeholder="Username" v-model="inUsername" ref="username" required autofocus>
+                    <input type="password" class="form-control" placeholder="Password" v-model="inPassword" required>
+                    <button class="btn btn-primary btn-block" type="submit">Sign in</button>
+                </form>
+            </div>
+        </div>
+        <div id="chat_page" class="row">
+            <div id="topic_container" class="col-3" v-show="shouldShowMainPage">
+                <div class="header">
+                    <img data-toggle="modal" data-target="#modal_profile" src="/assets/img/user.png" alt="">
+                    <div class="control float-right">
+                        <i class="oi oi-chat" data-toggle="modal" data-target="#modal_start_chat"></i>
+                        <i class="oi oi-cog" data-toggle="modal" data-target="#modal_profile"></i>
+                        
+                        <!-- Modal Start New Chat -->
+                        <div class="modal fade" id="modal_start_chat" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Start New Chat</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="#" method="get" v-on:submit.prevent="findUsers">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Enter username here..." value="Abdul Hakeem, Abdullah Zagat, Albert Dave" v-model="inFindUsers" required>
+                                            <div class="input-group-append">
+                                                <button type="submit" class="btn btn-info" type="button"><span class="oi oi-magnifying-glass"></span></button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <ul class="contact-result">
+                                        <li v-for="(contact, contactIndex) in contacts" v-on:click="startP2PChat(contact.user_id)">
+                                            <div class="contact-details">
+                                                <img src="/assets/img/user.png" alt="">
+                                                <p>{{ contact.username }}</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+
+                        <!-- Modal Profile -->
+                        <!--
+                        <div class="modal fade" id="modal_profile" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title" id="modal_profile_title">Riandy Rahman Nugraha</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                </div>
+                                <div class="modal-body">
+                                    <img class="big-avatar" src="/assets/img/user.png" alt="">
+                                    <form action="#" method="post">
+                                        <div class="input-group">
+                                            <input class="form-control" type="file" name="your-files">
+                                            <div class="input-group-append">
+                                                <button type="submit" class="btn btn-primary">Upload</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        -->
+                    </div>
+                </div>
+                <ul id="topic_list">
+                    <li v-for="(topic, topicIndex) in topics" v-bind:class="{active: topic.active}" v-on:click.prevent="loadTopic(topicIndex)">
+                        <div class="row">
+                            <div class="avatar-holder col-3">
+                                <img src="/assets/img/user.png" alt="">
+                            </div>
+                            <div class="desc-holder col-8">
+                                <div class="row">
+                                    <h6 class="topic-title col-8">{{ topic.title }}</h6>
+                                    <div class="topic-menu-panel col-4 dropdown">
+                                        <a class="dropdown-toggle" data-toggle="dropdown">
+                                            {{ formatTopicTimestamp(topic.last_updated) }}
+                                        </a>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="#" v-on:click.prevent="hideTopic(topicIndex)">Delete</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <p class="topic-last-message col-11">{{ getTopicShortMessage(topicIndex) }}</p>
+                                    <p class="topic-unread-count badge badge-primary col-1 float-right" v-show="topic.unread > 0">{{ getTopicUnread(topicIndex) }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div id="message_container" class="col-9">
+                <div class="no-topic-selected" v-show="shouldShowNoTopicSelected">
+                    <img src="assets/img/chat.png" alt="">
+                    <h3>HarajChat v2.0</h3>
+                    <p>Select Topic to Get Started</p>
+                </div>
+                <div class="topic-selected" v-show="shouldShowTopicSelected">
+                    <div class="header">
+                        <img src="/assets/img/user.png" alt="">
+                        <div class="peer-details">
+                            <p class="peer-name">{{ resolveActiveTopicTitle() }}</p>
+                            <!--<p class="peer-online-status">Last seen today at 06:00</p>-->
+                        </div>
+                    </div>
+                    <ul class="message-list" ref="messages">
+                        <li v-for="(message, messageIndex) in messages" v-bind:class="{right: isOwnMessage(messageIndex)}">
+                            <div class="message-box" v-bind:class="{'own-message': isOwnMessage(messageIndex), 'peer-message': !isOwnMessage(messageIndex)}">
+                                <p class="content">{{ getMessagePayload(messageIndex) }}</p>
+                                <div class="message-menu-panel own dropdown">
+                                    <a class="dropdown-toggle-left" data-toggle="dropdown">
+                                        {{ formatMessageTimestamp(message.ts) }} <span v-show="isOwnMessage(messageIndex)" class="tickmark-container" v-bind:class="{read: isMessageRead(messageIndex)}"><span class="tickmark tickmark-sent">&check;</span><span class="tickmark tickmark-recv">&check;</span></span>
+                                    </a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#" v-on:click.prevent="deleteMessage(messageIndex)">Delete</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="control-box">
+                        <form action="#" class="form-inline" v-on:submit.prevent="sendMessage()">
+                            <input id="message_input" type="text" class="form-control col-11" placeholder="Type message here..." autocomplete="off" required v-model="inMessage" ref="message" autofocus>
+                            <button class="btn btn-primary btn-block col-1">Send</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/moment.js"></script>
+    <script src="assets/js/chat_api.js"></script>
+    <script src="assets/js/chat_ws_api.js"></script>
+    <script src="assets/js/vue.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
