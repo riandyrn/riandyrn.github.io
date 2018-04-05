@@ -24,7 +24,7 @@
         <div id="chat_page" class="row">
             <div id="topic_container" class="col-3" v-show="shouldShowMainPage">
                 <div class="header">
-                    <img data-toggle="modal" data-target="#modal_profile" src="/assets/img/user.png" alt="">
+                    <img data-toggle="modal" data-target="#modal_profile" src="assets/img/user.png" alt="">
                     <div class="control float-right">
                         <i class="oi oi-chat" data-toggle="modal" data-target="#modal_start_chat"></i>
                         <i class="oi oi-cog" data-toggle="modal" data-target="#modal_profile"></i>
@@ -51,7 +51,7 @@
                                     <ul class="contact-result">
                                         <li v-for="(contact, contactIndex) in contacts" v-on:click="startP2PChat(contact.user_id)">
                                             <div class="contact-details">
-                                                <img src="/assets/img/user.png" alt="">
+                                                <img src="assets/img/user.png" alt="">
                                                 <p>{{ contact.username }}</p>
                                             </div>
                                         </li>
@@ -73,7 +73,7 @@
                                 </button>
                                 </div>
                                 <div class="modal-body">
-                                    <img class="big-avatar" src="/assets/img/user.png" alt="">
+                                    <img class="big-avatar" src="assets/img/user.png" alt="">
                                     <form action="#" method="post">
                                         <div class="input-group">
                                             <input class="form-control" type="file" name="your-files">
@@ -93,7 +93,7 @@
                     <li v-for="(topic, topicIndex) in topics" v-bind:class="{active: topic.active}" v-on:click.prevent="loadTopic(topicIndex)">
                         <div class="row">
                             <div class="avatar-holder col-3">
-                                <img src="/assets/img/user.png" alt="">
+                                <img src="assets/img/user.png" alt="">
                             </div>
                             <div class="desc-holder col-8">
                                 <div class="row">
@@ -124,7 +124,7 @@
                 </div>
                 <div class="topic-selected" v-show="shouldShowTopicSelected">
                     <div class="header">
-                        <img src="/assets/img/user.png" alt="">
+                        <img src="assets/img/user.png" alt="">
                         <div class="peer-details">
                             <p class="peer-name">{{ resolveActiveTopicTitle() }}</p>
                             <!--<p class="peer-online-status">Last seen today at 06:00</p>-->
