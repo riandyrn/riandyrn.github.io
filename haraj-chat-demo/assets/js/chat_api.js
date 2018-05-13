@@ -1,4 +1,5 @@
-const baseURL = "http://52.30.62.174:8065"
+//const baseURL = "http://localhost:8065"
+const baseURL = "http://34.248.203.142:8065"
 const mGET = "GET"
 const mPOST = "POST"
 const mPUT = "PUT"

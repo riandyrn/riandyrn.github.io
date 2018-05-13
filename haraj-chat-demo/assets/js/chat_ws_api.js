@@ -1,4 +1,5 @@
-const wsURL = "ws://52.30.62.174:8065/chat/ws"
+//const wsURL = "ws://localhost:8065/chat/ws"
+const wsURL = "ws://34.248.203.142:8065/chat/ws"
 
 class ChatWsAPI {
 
