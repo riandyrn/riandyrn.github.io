@@ -1,6 +1,6 @@
 //const wsURL = "ws://localhost:8065/chat/ws"
-//const wsURL = "ws://34.248.203.142:8065/chat/ws"
-const wsURL = "wss://myalb-1762409683.eu-west-1.elb.amazonaws.com/chat/ws"
+const wsURL = "ws://34.248.203.142:8065/chat/ws"
+//const wsURL = "wss://myalb-1762409683.eu-west-1.elb.amazonaws.com/chat/ws"
 
 class ChatWsAPI {
 
